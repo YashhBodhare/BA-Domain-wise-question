@@ -1,0 +1,44 @@
+[
+  {
+    "slug": "01-ecommerce",
+    "prefix": "EC",
+    "domain": "E-commerce",
+    "title": "Cart Abandonment & Failed Orders",
+    "decision": "Choose which failure to contain first, then define an evidence-backed checkout and recovery change."
+  },
+  {
+    "slug": "02-banking-fintech",
+    "prefix": "BF",
+    "domain": "Banking & Fintech",
+    "title": "Digital Loan Approval Delays",
+    "decision": "Choose which delay or information gap to address while preserving required decision controls."
+  },
+  {
+    "slug": "03-healthcare",
+    "prefix": "HC",
+    "domain": "Healthcare",
+    "title": "Patient Appointment Challenges",
+    "decision": "Agree a scheduling improvement that reduces avoidable waiting and conflicts without concealing clinical or capacity constraints."
+  },
+  {
+    "slug": "04-hospitality",
+    "prefix": "HP",
+    "domain": "Hospitality",
+    "title": "Booking & Guest Experience Issues",
+    "decision": "Choose a booking or service improvement that preserves guest trust and profitable delivery."
+  },
+  {
+    "slug": "05-it-services-saas",
+    "prefix": "IT",
+    "domain": "IT Services & SaaS",
+    "title": "Scope Changes & Delivery Delays",
+    "decision": "Agree which changes to accept, defer, split, or reject using value, impact, dependencies, and authorised decisions."
+  },
+  {
+    "slug": "06-logistics-supply-chain",
+    "prefix": "LS",
+    "domain": "Logistics & Supply Chain",
+    "title": "Delivery Visibility & Fulfilment Costs",
+    "decision": "Choose a visibility or fulfilment intervention that improves reliable delivery without hiding cost or service trade-offs."
+  }
+]

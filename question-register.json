@@ -1,0 +1,2882 @@
+[
+  {
+    "domain": "E-commerce",
+    "case": "Cart Abandonment & Failed Orders",
+    "file": "01-ecommerce/README.md",
+    "id": "EC01",
+    "question": "What business outcome should improve when we address checkout abandonment and unconfirmed paid orders?",
+    "ask": "Commerce owner",
+    "purpose": "Sets the outcome before selecting a feature.",
+    "section": 0
+  },
+  {
+    "domain": "E-commerce",
+    "case": "Cart Abandonment & Failed Orders",
+    "file": "01-ecommerce/README.md",
+    "id": "EC02",
+    "question": "What does \u201cfailed order\u201d mean in your operational records?",
+    "ask": "Operations / Finance",
+    "purpose": "Separates order-state failure from payment failure.",
+    "section": 0
+  },
+  {
+    "domain": "E-commerce",
+    "case": "Cart Abandonment & Failed Orders",
+    "file": "01-ecommerce/README.md",
+    "id": "EC03",
+    "question": "Which payment state is currently described to customers as \u201csuccessful\u201d?",
+    "ask": "Payments / Support",
+    "purpose": "Clarifies a potentially misleading success signal.",
+    "section": 0
+  },
+  {
+    "domain": "E-commerce",
+    "case": "Cart Abandonment & Failed Orders",
+    "file": "01-ecommerce/README.md",
+    "id": "EC04",
+    "question": "When did this pattern first become visible?",
+    "ask": "Analytics / Support",
+    "purpose": "Establishes timing for change comparisons.",
+    "section": 0
+  },
+  {
+    "domain": "E-commerce",
+    "case": "Cart Abandonment & Failed Orders",
+    "file": "01-ecommerce/README.md",
+    "id": "EC05",
+    "question": "Which customer journeys are affected most severely?",
+    "ask": "Support / Analytics",
+    "purpose": "Identifies impact beyond the overall rate.",
+    "section": 0
+  },
+  {
+    "domain": "E-commerce",
+    "case": "Cart Abandonment & Failed Orders",
+    "file": "01-ecommerce/README.md",
+    "id": "EC06",
+    "question": "What is the financial exposure from paid-but-unconfirmed orders?",
+    "ask": "Finance",
+    "purpose": "Prioritises customer money at risk.",
+    "section": 0
+  },
+  {
+    "domain": "E-commerce",
+    "case": "Cart Abandonment & Failed Orders",
+    "file": "01-ecommerce/README.md",
+    "id": "EC07",
+    "question": "Can you walk me through one abandoned checkout using its event history?",
+    "ask": "Product / Analytics",
+    "purpose": "Locates the last verified journey step.",
+    "section": 1
+  },
+  {
+    "domain": "E-commerce",
+    "case": "Cart Abandonment & Failed Orders",
+    "file": "01-ecommerce/README.md",
+    "id": "EC08",
+    "question": "Can we trace one reported successful payment to its expected order record?",
+    "ask": "Payments / Engineering",
+    "purpose": "Tests the payment-to-order connection.",
+    "section": 1
+  },
+  {
+    "domain": "E-commerce",
+    "case": "Cart Abandonment & Failed Orders",
+    "file": "01-ecommerce/README.md",
+    "id": "EC09",
+    "question": "At which checkout step does completion decline most?",
+    "ask": "Analytics",
+    "purpose": "Narrows investigation to a specific transition.",
+    "section": 1
+  },
+  {
+    "domain": "E-commerce",
+    "case": "Cart Abandonment & Failed Orders",
+    "file": "01-ecommerce/README.md",
+    "id": "EC10",
+    "question": "How do failures differ by device, browser, payment method, or sales channel?",
+    "ask": "Analytics / QA",
+    "purpose": "Finds actionable differences in affected populations.",
+    "section": 1
+  },
+  {
+    "domain": "E-commerce",
+    "case": "Cart Abandonment & Failed Orders",
+    "file": "01-ecommerce/README.md",
+    "id": "EC11",
+    "question": "Which deployments or checkout-policy changes preceded the pattern?",
+    "ask": "Engineering / Product",
+    "purpose": "Identifies candidate changes without presuming causality.",
+    "section": 1
+  },
+  {
+    "domain": "E-commerce",
+    "case": "Cart Abandonment & Failed Orders",
+    "file": "01-ecommerce/README.md",
+    "id": "EC12",
+    "question": "How are repeated visits and checkout attempts counted in the funnel?",
+    "ask": "Analytics",
+    "purpose": "Prevents misleading conversion denominators.",
+    "section": 1
+  },
+  {
+    "domain": "E-commerce",
+    "case": "Cart Abandonment & Failed Orders",
+    "file": "01-ecommerce/README.md",
+    "id": "EC13",
+    "question": "Which event authorises creation or confirmation of an order?",
+    "ask": "Payments / Engineering",
+    "purpose": "Defines the required state transition.",
+    "section": 2
+  },
+  {
+    "domain": "E-commerce",
+    "case": "Cart Abandonment & Failed Orders",
+    "file": "01-ecommerce/README.md",
+    "id": "EC14",
+    "question": "What happens when payment succeeds but saving the order fails?",
+    "ask": "Engineering / Operations",
+    "purpose": "Exposes the recovery path between systems.",
+    "section": 2
+  },
+  {
+    "domain": "E-commerce",
+    "case": "Cart Abandonment & Failed Orders",
+    "file": "01-ecommerce/README.md",
+    "id": "EC15",
+    "question": "What happens if the same payment event is delivered more than once?",
+    "ask": "Engineering",
+    "purpose": "Checks duplicate processing and order integrity.",
+    "section": 2
+  },
+  {
+    "domain": "E-commerce",
+    "case": "Cart Abandonment & Failed Orders",
+    "file": "01-ecommerce/README.md",
+    "id": "EC16",
+    "question": "How is a delayed payment notification handled after checkout appears to time out?",
+    "ask": "Engineering / Payments",
+    "purpose": "Reconciles asynchronous outcomes with customer status.",
+    "section": 2
+  },
+  {
+    "domain": "E-commerce",
+    "case": "Cart Abandonment & Failed Orders",
+    "file": "01-ecommerce/README.md",
+    "id": "EC17",
+    "question": "What prevents a customer retry from creating duplicate charges or orders?",
+    "ask": "Payments / Engineering",
+    "purpose": "Defines safe retry behaviour.",
+    "section": 2
+  },
+  {
+    "domain": "E-commerce",
+    "case": "Cart Abandonment & Failed Orders",
+    "file": "01-ecommerce/README.md",
+    "id": "EC18",
+    "question": "Who reconciles captured payments that have no matching confirmed order?",
+    "ask": "Finance / Operations",
+    "purpose": "Establishes exception ownership and action.",
+    "section": 2
+  },
+  {
+    "domain": "E-commerce",
+    "case": "Cart Abandonment & Failed Orders",
+    "file": "01-ecommerce/README.md",
+    "id": "EC19",
+    "question": "At what point does the customer see the complete payable amount?",
+    "ask": "Product / Customers",
+    "purpose": "Reveals price surprises in the journey.",
+    "section": 3
+  },
+  {
+    "domain": "E-commerce",
+    "case": "Cart Abandonment & Failed Orders",
+    "file": "01-ecommerce/README.md",
+    "id": "EC20",
+    "question": "How are promotion failures explained before payment begins?",
+    "ask": "Product / Support",
+    "purpose": "Clarifies offer validation and user recovery.",
+    "section": 3
+  },
+  {
+    "domain": "E-commerce",
+    "case": "Cart Abandonment & Failed Orders",
+    "file": "01-ecommerce/README.md",
+    "id": "EC21",
+    "question": "When is stock reserved during checkout?",
+    "ask": "Inventory owner",
+    "purpose": "Defines the reservation boundary.",
+    "section": 3
+  },
+  {
+    "domain": "E-commerce",
+    "case": "Cart Abandonment & Failed Orders",
+    "file": "01-ecommerce/README.md",
+    "id": "EC22",
+    "question": "What happens when reserved stock expires after a payment has completed?",
+    "ask": "Inventory / Payments",
+    "purpose": "Exposes a cross-system timing exception.",
+    "section": 3
+  },
+  {
+    "domain": "E-commerce",
+    "case": "Cart Abandonment & Failed Orders",
+    "file": "01-ecommerce/README.md",
+    "id": "EC23",
+    "question": "Which delivery restrictions can block checkout after a cart is created?",
+    "ask": "Fulfilment / Product",
+    "purpose": "Identifies late-discovered eligibility constraints.",
+    "section": 3
+  },
+  {
+    "domain": "E-commerce",
+    "case": "Cart Abandonment & Failed Orders",
+    "file": "01-ecommerce/README.md",
+    "id": "EC24",
+    "question": "What changes to price or availability are permitted while a checkout remains open?",
+    "ask": "Commerce / Inventory",
+    "purpose": "Clarifies consistency rules for a continuing session.",
+    "section": 3
+  },
+  {
+    "domain": "E-commerce",
+    "case": "Cart Abandonment & Failed Orders",
+    "file": "01-ecommerce/README.md",
+    "id": "EC25",
+    "question": "What should a customer see when payment status cannot yet be verified?",
+    "ask": "Product / Support",
+    "purpose": "Avoids falsely confirming or rejecting the transaction.",
+    "section": 4
+  },
+  {
+    "domain": "E-commerce",
+    "case": "Cart Abandonment & Failed Orders",
+    "file": "01-ecommerce/README.md",
+    "id": "EC26",
+    "question": "How can a customer check the status without paying again?",
+    "ask": "Customers / Product",
+    "purpose": "Defines a safe self-service recovery need.",
+    "section": 4
+  },
+  {
+    "domain": "E-commerce",
+    "case": "Cart Abandonment & Failed Orders",
+    "file": "01-ecommerce/README.md",
+    "id": "EC27",
+    "question": "Which identifier should support use to locate an affected transaction?",
+    "ask": "Support / Payments",
+    "purpose": "Connects customer enquiries to reliable records.",
+    "section": 4
+  },
+  {
+    "domain": "E-commerce",
+    "case": "Cart Abandonment & Failed Orders",
+    "file": "01-ecommerce/README.md",
+    "id": "EC28",
+    "question": "When should an unresolved transaction trigger a support escalation?",
+    "ask": "Support / Operations",
+    "purpose": "Defines timing and ownership for intervention.",
+    "section": 4
+  },
+  {
+    "domain": "E-commerce",
+    "case": "Cart Abandonment & Failed Orders",
+    "file": "01-ecommerce/README.md",
+    "id": "EC29",
+    "question": "Who decides the refund or fulfilment response for a paid-but-unconfirmed order?",
+    "ask": "Finance / Operations",
+    "purpose": "Identifies authority for customer resolution.",
+    "section": 4
+  },
+  {
+    "domain": "E-commerce",
+    "case": "Cart Abandonment & Failed Orders",
+    "file": "01-ecommerce/README.md",
+    "id": "EC30",
+    "question": "Which customer-facing messages currently cause avoidable repeat attempts?",
+    "ask": "Customers / Support",
+    "purpose": "Finds communication contributing to repeated actions.",
+    "section": 4
+  },
+  {
+    "domain": "E-commerce",
+    "case": "Cart Abandonment & Failed Orders",
+    "file": "01-ecommerce/README.md",
+    "id": "EC31",
+    "question": "What workload must checkout support during the expected peak period?",
+    "ask": "Engineering / Commerce",
+    "purpose": "Establishes measurable capacity conditions.",
+    "section": 5
+  },
+  {
+    "domain": "E-commerce",
+    "case": "Cart Abandonment & Failed Orders",
+    "file": "01-ecommerce/README.md",
+    "id": "EC32",
+    "question": "Which checkout timings matter most to customers completing the purchase?",
+    "ask": "Customers / Product",
+    "purpose": "Identifies performance expectations to quantify.",
+    "section": 5
+  },
+  {
+    "domain": "E-commerce",
+    "case": "Cart Abandonment & Failed Orders",
+    "file": "01-ecommerce/README.md",
+    "id": "EC33",
+    "question": "What behaviour is acceptable when the payment provider is unavailable?",
+    "ask": "Payments / Product",
+    "purpose": "Defines an agreed degraded-service response.",
+    "section": 5
+  },
+  {
+    "domain": "E-commerce",
+    "case": "Cart Abandonment & Failed Orders",
+    "file": "01-ecommerce/README.md",
+    "id": "EC34",
+    "question": "What transaction history must remain available for reconciliation?",
+    "ask": "Finance / Engineering",
+    "purpose": "Sets evidence needs for resolving mismatches.",
+    "section": 5
+  },
+  {
+    "domain": "E-commerce",
+    "case": "Cart Abandonment & Failed Orders",
+    "file": "01-ecommerce/README.md",
+    "id": "EC35",
+    "question": "Who may view or change an affected customer\u2019s order and payment status?",
+    "ask": "Security / Operations",
+    "purpose": "Clarifies permissions and sensitive-state changes.",
+    "section": 5
+  },
+  {
+    "domain": "E-commerce",
+    "case": "Cart Abandonment & Failed Orders",
+    "file": "01-ecommerce/README.md",
+    "id": "EC36",
+    "question": "Which accessibility barriers appear in checkout support enquiries or observed sessions?",
+    "ask": "Customers / Accessibility owner",
+    "purpose": "Includes customers excluded by the current interaction.",
+    "section": 5
+  },
+  {
+    "domain": "E-commerce",
+    "case": "Cart Abandonment & Failed Orders",
+    "file": "01-ecommerce/README.md",
+    "id": "EC37",
+    "question": "Which customer-risk issue needs containment before wider checkout improvements?",
+    "ask": "Commerce / Finance",
+    "purpose": "Separates urgent protection from optional optimisation.",
+    "section": 6
+  },
+  {
+    "domain": "E-commerce",
+    "case": "Cart Abandonment & Failed Orders",
+    "file": "01-ecommerce/README.md",
+    "id": "EC38",
+    "question": "Which checkout functions must remain unchanged in the first intervention?",
+    "ask": "Product / Operations",
+    "purpose": "Defines the release boundary.",
+    "section": 6
+  },
+  {
+    "domain": "E-commerce",
+    "case": "Cart Abandonment & Failed Orders",
+    "file": "01-ecommerce/README.md",
+    "id": "EC39",
+    "question": "Which proposed remedy still needs evidence of feasibility or effectiveness?",
+    "ask": "Product / Engineering",
+    "purpose": "Challenges solution assumptions explicitly.",
+    "section": 6
+  },
+  {
+    "domain": "E-commerce",
+    "case": "Cart Abandonment & Failed Orders",
+    "file": "01-ecommerce/README.md",
+    "id": "EC40",
+    "question": "Who approves payment-state and order-recovery rules?",
+    "ask": "Payments / Process owner",
+    "purpose": "Identifies business decision authority.",
+    "section": 6
+  },
+  {
+    "domain": "E-commerce",
+    "case": "Cart Abandonment & Failed Orders",
+    "file": "01-ecommerce/README.md",
+    "id": "EC41",
+    "question": "Which external provider decisions could delay our recovery change?",
+    "ask": "Provider contact / Engineering",
+    "purpose": "Surfaces dependencies outside the delivery team.",
+    "section": 6
+  },
+  {
+    "domain": "E-commerce",
+    "case": "Cart Abandonment & Failed Orders",
+    "file": "01-ecommerce/README.md",
+    "id": "EC42",
+    "question": "What would justify deferring a requested checkout enhancement?",
+    "ask": "Commerce owner",
+    "purpose": "Supports transparent value and risk trade-offs.",
+    "section": 6
+  },
+  {
+    "domain": "E-commerce",
+    "case": "Cart Abandonment & Failed Orders",
+    "file": "01-ecommerce/README.md",
+    "id": "EC43",
+    "question": "Which examples would prove that a paid transaction creates exactly the intended order?",
+    "ask": "QA / Payments",
+    "purpose": "Defines observable success evidence.",
+    "section": 7
+  },
+  {
+    "domain": "E-commerce",
+    "case": "Cart Abandonment & Failed Orders",
+    "file": "01-ecommerce/README.md",
+    "id": "EC44",
+    "question": "Which failure and retry scenarios must be checked before the change is accepted?",
+    "ask": "QA / Operations",
+    "purpose": "Defines risk-based acceptance coverage.",
+    "section": 7
+  },
+  {
+    "domain": "E-commerce",
+    "case": "Cart Abandonment & Failed Orders",
+    "file": "01-ecommerce/README.md",
+    "id": "EC45",
+    "question": "Who will confirm that the recovery journey is understandable to affected customers?",
+    "ask": "Product / Customer representatives",
+    "purpose": "Establishes user validation responsibility.",
+    "section": 7
+  },
+  {
+    "domain": "E-commerce",
+    "case": "Cart Abandonment & Failed Orders",
+    "file": "01-ecommerce/README.md",
+    "id": "EC46",
+    "question": "How will we verify the fix for the affected release rather than only overall conversion?",
+    "ask": "Analytics / QA",
+    "purpose": "Prevents aggregate improvement hiding a remaining defect.",
+    "section": 7
+  },
+  {
+    "domain": "E-commerce",
+    "case": "Cart Abandonment & Failed Orders",
+    "file": "01-ecommerce/README.md",
+    "id": "EC47",
+    "question": "Which customer-money and order-integrity measures must not worsen?",
+    "ask": "Finance / Operations",
+    "purpose": "Defines commercial and safety guardrails.",
+    "section": 7
+  },
+  {
+    "domain": "E-commerce",
+    "case": "Cart Abandonment & Failed Orders",
+    "file": "01-ecommerce/README.md",
+    "id": "EC48",
+    "question": "Who will review unresolved reconciliation cases after release?",
+    "ask": "Operations / Finance",
+    "purpose": "Maintains ownership beyond deployment.",
+    "section": 7
+  },
+  {
+    "domain": "Banking & Fintech",
+    "case": "Digital Loan Approval Delays",
+    "file": "02-banking-fintech/README.md",
+    "id": "BF01",
+    "question": "What outcome matters most for this loan journey improvement?",
+    "ask": "Lending sponsor",
+    "purpose": "Clarifies speed, clarity, completion, or another objective.",
+    "section": 0
+  },
+  {
+    "domain": "Banking & Fintech",
+    "case": "Digital Loan Approval Delays",
+    "file": "02-banking-fintech/README.md",
+    "id": "BF02",
+    "question": "What event starts the approval-time clock in our reports?",
+    "ask": "Analytics / Credit operations",
+    "purpose": "Defines the measurement boundary.",
+    "section": 0
+  },
+  {
+    "domain": "Banking & Fintech",
+    "case": "Digital Loan Approval Delays",
+    "file": "02-banking-fintech/README.md",
+    "id": "BF03",
+    "question": "What event stops that clock?",
+    "ask": "Analytics / Credit operations",
+    "purpose": "Distinguishes decision, offer, and disbursement timing.",
+    "section": 0
+  },
+  {
+    "domain": "Banking & Fintech",
+    "case": "Digital Loan Approval Delays",
+    "file": "02-banking-fintech/README.md",
+    "id": "BF04",
+    "question": "Which loan products are within this investigation?",
+    "ask": "Product owner",
+    "purpose": "Avoids mixing different decision processes.",
+    "section": 0
+  },
+  {
+    "domain": "Banking & Fintech",
+    "case": "Digital Loan Approval Delays",
+    "file": "02-banking-fintech/README.md",
+    "id": "BF05",
+    "question": "Which applicants experience the longest avoidable wait?",
+    "ask": "Analytics / Service teams",
+    "purpose": "Finds affected segments without assuming a cause.",
+    "section": 0
+  },
+  {
+    "domain": "Banking & Fintech",
+    "case": "Digital Loan Approval Delays",
+    "file": "02-banking-fintech/README.md",
+    "id": "BF06",
+    "question": "What business or customer harm results from those delays?",
+    "ask": "Product / Applicants",
+    "purpose": "Prioritises delay by impact rather than duration alone.",
+    "section": 0
+  },
+  {
+    "domain": "Banking & Fintech",
+    "case": "Digital Loan Approval Delays",
+    "file": "02-banking-fintech/README.md",
+    "id": "BF07",
+    "question": "Can you walk through a recent delayed application from submission to decision?",
+    "ask": "Credit operations",
+    "purpose": "Reveals actual work and waiting.",
+    "section": 1
+  },
+  {
+    "domain": "Banking & Fintech",
+    "case": "Digital Loan Approval Delays",
+    "file": "02-banking-fintech/README.md",
+    "id": "BF08",
+    "question": "At which handoff does the application spend the most time waiting?",
+    "ask": "Operations / Analytics",
+    "purpose": "Identifies the queue to investigate.",
+    "section": 1
+  },
+  {
+    "domain": "Banking & Fintech",
+    "case": "Digital Loan Approval Delays",
+    "file": "02-banking-fintech/README.md",
+    "id": "BF09",
+    "question": "Which reported delays involve an incomplete application?",
+    "ask": "Document team / Analytics",
+    "purpose": "Separates customer-input waiting from internal processing.",
+    "section": 1
+  },
+  {
+    "domain": "Banking & Fintech",
+    "case": "Digital Loan Approval Delays",
+    "file": "02-banking-fintech/README.md",
+    "id": "BF10",
+    "question": "How are applications assigned to reviewers?",
+    "ask": "Credit operations",
+    "purpose": "Clarifies routing and ownership.",
+    "section": 1
+  },
+  {
+    "domain": "Banking & Fintech",
+    "case": "Digital Loan Approval Delays",
+    "file": "02-banking-fintech/README.md",
+    "id": "BF11",
+    "question": "What happens when the assigned reviewer is unavailable?",
+    "ask": "Credit operations",
+    "purpose": "Exposes continuity and escalation gaps.",
+    "section": 1
+  },
+  {
+    "domain": "Banking & Fintech",
+    "case": "Digital Loan Approval Delays",
+    "file": "02-banking-fintech/README.md",
+    "id": "BF12",
+    "question": "What evidence shows whether the delay began after a process or system change?",
+    "ask": "Engineering / Operations",
+    "purpose": "Tests timing against a candidate change.",
+    "section": 1
+  },
+  {
+    "domain": "Banking & Fintech",
+    "case": "Digital Loan Approval Delays",
+    "file": "02-banking-fintech/README.md",
+    "id": "BF13",
+    "question": "How is the required document set determined for a particular application?",
+    "ask": "Verification / Product",
+    "purpose": "Clarifies variation in evidence requirements.",
+    "section": 2
+  },
+  {
+    "domain": "Banking & Fintech",
+    "case": "Digital Loan Approval Delays",
+    "file": "02-banking-fintech/README.md",
+    "id": "BF14",
+    "question": "Why is a previously supplied document requested again in the cases we reviewed?",
+    "ask": "Verification / Service teams",
+    "purpose": "Investigates repeated requests using actual examples.",
+    "section": 2
+  },
+  {
+    "domain": "Banking & Fintech",
+    "case": "Digital Loan Approval Delays",
+    "file": "02-banking-fintech/README.md",
+    "id": "BF15",
+    "question": "What makes a submitted document acceptable for verification?",
+    "ask": "Verification / Compliance owner",
+    "purpose": "Defines reviewable evidence standards.",
+    "section": 2
+  },
+  {
+    "domain": "Banking & Fintech",
+    "case": "Digital Loan Approval Delays",
+    "file": "02-banking-fintech/README.md",
+    "id": "BF16",
+    "question": "How are missing or invalid documents explained to the applicant?",
+    "ask": "Service teams / Applicants",
+    "purpose": "Reveals clarity of corrective guidance.",
+    "section": 2
+  },
+  {
+    "domain": "Banking & Fintech",
+    "case": "Digital Loan Approval Delays",
+    "file": "02-banking-fintech/README.md",
+    "id": "BF17",
+    "question": "What happens when two sources provide inconsistent applicant information?",
+    "ask": "Verification / Fraud team",
+    "purpose": "Defines the exception path for conflicting evidence.",
+    "section": 2
+  },
+  {
+    "domain": "Banking & Fintech",
+    "case": "Digital Loan Approval Delays",
+    "file": "02-banking-fintech/README.md",
+    "id": "BF18",
+    "question": "How are replacement document versions linked to the original request?",
+    "ask": "Engineering / Verification",
+    "purpose": "Prevents stale or duplicate review.",
+    "section": 2
+  },
+  {
+    "domain": "Banking & Fintech",
+    "case": "Digital Loan Approval Delays",
+    "file": "02-banking-fintech/README.md",
+    "id": "BF19",
+    "question": "Which checks require a human decision under the approved lending policy?",
+    "ask": "Credit / Risk owners",
+    "purpose": "Defines the boundary of automated processing.",
+    "section": 3
+  },
+  {
+    "domain": "Banking & Fintech",
+    "case": "Digital Loan Approval Delays",
+    "file": "02-banking-fintech/README.md",
+    "id": "BF20",
+    "question": "Who can approve exceptions to the normal decision path?",
+    "ask": "Credit governance owner",
+    "purpose": "Establishes authority without bypassing controls.",
+    "section": 3
+  },
+  {
+    "domain": "Banking & Fintech",
+    "case": "Digital Loan Approval Delays",
+    "file": "02-banking-fintech/README.md",
+    "id": "BF21",
+    "question": "How are borderline or disputed cases routed for review?",
+    "ask": "Underwriting / Risk",
+    "purpose": "Clarifies a non-standard decision journey.",
+    "section": 3
+  },
+  {
+    "domain": "Banking & Fintech",
+    "case": "Digital Loan Approval Delays",
+    "file": "02-banking-fintech/README.md",
+    "id": "BF22",
+    "question": "What happens when an applicant changes information during assessment?",
+    "ask": "Credit operations",
+    "purpose": "Identifies reassessment and versioning needs.",
+    "section": 3
+  },
+  {
+    "domain": "Banking & Fintech",
+    "case": "Digital Loan Approval Delays",
+    "file": "02-banking-fintech/README.md",
+    "id": "BF23",
+    "question": "Which checks must finish before an approval can be communicated?",
+    "ask": "Credit / Compliance owners",
+    "purpose": "Defines prerequisites for a reliable decision status.",
+    "section": 3
+  },
+  {
+    "domain": "Banking & Fintech",
+    "case": "Digital Loan Approval Delays",
+    "file": "02-banking-fintech/README.md",
+    "id": "BF24",
+    "question": "How is an application withdrawn or closed without a lending decision?",
+    "ask": "Credit operations / Service teams",
+    "purpose": "Clarifies terminal states and customer choice.",
+    "section": 3
+  },
+  {
+    "domain": "Banking & Fintech",
+    "case": "Digital Loan Approval Delays",
+    "file": "02-banking-fintech/README.md",
+    "id": "BF25",
+    "question": "Which application states are currently visible to applicants?",
+    "ask": "Product / Applicants",
+    "purpose": "Identifies gaps in status visibility.",
+    "section": 4
+  },
+  {
+    "domain": "Banking & Fintech",
+    "case": "Digital Loan Approval Delays",
+    "file": "02-banking-fintech/README.md",
+    "id": "BF26",
+    "question": "Which status descriptions do applicants misunderstand?",
+    "ask": "Applicants / Service teams",
+    "purpose": "Finds language that creates avoidable enquiries.",
+    "section": 4
+  },
+  {
+    "domain": "Banking & Fintech",
+    "case": "Digital Loan Approval Delays",
+    "file": "02-banking-fintech/README.md",
+    "id": "BF27",
+    "question": "What action should each document-request notification enable the applicant to take?",
+    "ask": "Product / Applicants",
+    "purpose": "Links communication to a concrete next step.",
+    "section": 4
+  },
+  {
+    "domain": "Banking & Fintech",
+    "case": "Digital Loan Approval Delays",
+    "file": "02-banking-fintech/README.md",
+    "id": "BF28",
+    "question": "How can an applicant find the owner of an unresolved request?",
+    "ask": "Service operations",
+    "purpose": "Defines a usable support route.",
+    "section": 4
+  },
+  {
+    "domain": "Banking & Fintech",
+    "case": "Digital Loan Approval Delays",
+    "file": "02-banking-fintech/README.md",
+    "id": "BF29",
+    "question": "When should a waiting application be escalated for review?",
+    "ask": "Credit operations",
+    "purpose": "Sets a policy-backed escalation trigger.",
+    "section": 4
+  },
+  {
+    "domain": "Banking & Fintech",
+    "case": "Digital Loan Approval Delays",
+    "file": "02-banking-fintech/README.md",
+    "id": "BF30",
+    "question": "How do branch and digital teams share updates for the same application?",
+    "ask": "Branch / Digital operations",
+    "purpose": "Exposes cross-channel inconsistency.",
+    "section": 4
+  },
+  {
+    "domain": "Banking & Fintech",
+    "case": "Digital Loan Approval Delays",
+    "file": "02-banking-fintech/README.md",
+    "id": "BF31",
+    "question": "Which system is authoritative for the current application state?",
+    "ask": "Engineering / Credit operations",
+    "purpose": "Establishes a reliable status source.",
+    "section": 5
+  },
+  {
+    "domain": "Banking & Fintech",
+    "case": "Digital Loan Approval Delays",
+    "file": "02-banking-fintech/README.md",
+    "id": "BF32",
+    "question": "What happens when an external verification service does not respond?",
+    "ask": "Integration / Verification owners",
+    "purpose": "Defines timeout and recovery needs.",
+    "section": 5
+  },
+  {
+    "domain": "Banking & Fintech",
+    "case": "Digital Loan Approval Delays",
+    "file": "02-banking-fintech/README.md",
+    "id": "BF33",
+    "question": "Which applicant data is truly necessary at each assessment stage?",
+    "ask": "Privacy / Credit owners",
+    "purpose": "Clarifies purpose and data minimisation.",
+    "section": 5
+  },
+  {
+    "domain": "Banking & Fintech",
+    "case": "Digital Loan Approval Delays",
+    "file": "02-banking-fintech/README.md",
+    "id": "BF34",
+    "question": "Who may access or amend an applicant\u2019s documents and decision record?",
+    "ask": "Security / Credit operations",
+    "purpose": "Defines permissions for sensitive evidence.",
+    "section": 5
+  },
+  {
+    "domain": "Banking & Fintech",
+    "case": "Digital Loan Approval Delays",
+    "file": "02-banking-fintech/README.md",
+    "id": "BF35",
+    "question": "Which jurisdiction and lending obligations apply to this product and channel?",
+    "ask": "Compliance / Legal owners",
+    "purpose": "Requests authoritative scope instead of assuming a law.",
+    "section": 5
+  },
+  {
+    "domain": "Banking & Fintech",
+    "case": "Digital Loan Approval Delays",
+    "file": "02-banking-fintech/README.md",
+    "id": "BF36",
+    "question": "What decision history must be retained for an authorised review?",
+    "ask": "Risk / Records owner",
+    "purpose": "Defines traceability and evidence needs.",
+    "section": 5
+  },
+  {
+    "domain": "Banking & Fintech",
+    "case": "Digital Loan Approval Delays",
+    "file": "02-banking-fintech/README.md",
+    "id": "BF37",
+    "question": "Which delay can we address without changing the approved credit policy?",
+    "ask": "Product / Credit owner",
+    "purpose": "Finds a bounded improvement opportunity.",
+    "section": 6
+  },
+  {
+    "domain": "Banking & Fintech",
+    "case": "Digital Loan Approval Delays",
+    "file": "02-banking-fintech/README.md",
+    "id": "BF38",
+    "question": "Which applicant journeys are explicitly excluded from the first release?",
+    "ask": "Product owner",
+    "purpose": "Controls scope and expectation.",
+    "section": 6
+  },
+  {
+    "domain": "Banking & Fintech",
+    "case": "Digital Loan Approval Delays",
+    "file": "02-banking-fintech/README.md",
+    "id": "BF39",
+    "question": "What resource constraints limit faster verification or review?",
+    "ask": "Operations / Delivery lead",
+    "purpose": "Connects delays to staffing and capacity.",
+    "section": 6
+  },
+  {
+    "domain": "Banking & Fintech",
+    "case": "Digital Loan Approval Delays",
+    "file": "02-banking-fintech/README.md",
+    "id": "BF40",
+    "question": "Who approves a change to lending workflow or decision rules?",
+    "ask": "Governance owner",
+    "purpose": "Identifies accountable decision authority.",
+    "section": 6
+  },
+  {
+    "domain": "Banking & Fintech",
+    "case": "Digital Loan Approval Delays",
+    "file": "02-banking-fintech/README.md",
+    "id": "BF41",
+    "question": "What competing priorities could make a quicker customer journey less reliable?",
+    "ask": "Risk / Operations / Product",
+    "purpose": "Surfaces material trade-offs.",
+    "section": 6
+  },
+  {
+    "domain": "Banking & Fintech",
+    "case": "Digital Loan Approval Delays",
+    "file": "02-banking-fintech/README.md",
+    "id": "BF42",
+    "question": "Which external dependency requires agreement before the change can operate?",
+    "ask": "Vendor / Integration owner",
+    "purpose": "Makes implementation feasibility visible.",
+    "section": 6
+  },
+  {
+    "domain": "Banking & Fintech",
+    "case": "Digital Loan Approval Delays",
+    "file": "02-banking-fintech/README.md",
+    "id": "BF43",
+    "question": "Which application examples must be used to validate the new workflow?",
+    "ask": "Credit / QA",
+    "purpose": "Defines representative acceptance cases.",
+    "section": 7
+  },
+  {
+    "domain": "Banking & Fintech",
+    "case": "Digital Loan Approval Delays",
+    "file": "02-banking-fintech/README.md",
+    "id": "BF44",
+    "question": "How will we test status accuracy while an application is waiting for external evidence?",
+    "ask": "QA / Credit operations",
+    "purpose": "Covers an important asynchronous state.",
+    "section": 7
+  },
+  {
+    "domain": "Banking & Fintech",
+    "case": "Digital Loan Approval Delays",
+    "file": "02-banking-fintech/README.md",
+    "id": "BF45",
+    "question": "Who will confirm that document requests are understandable to applicants?",
+    "ask": "Product / Applicant representatives",
+    "purpose": "Establishes user validation.",
+    "section": 7
+  },
+  {
+    "domain": "Banking & Fintech",
+    "case": "Digital Loan Approval Delays",
+    "file": "02-banking-fintech/README.md",
+    "id": "BF46",
+    "question": "How will turnaround improvements be separated from changes in application mix?",
+    "ask": "Analytics / Credit operations",
+    "purpose": "Supports a fair outcome comparison.",
+    "section": 7
+  },
+  {
+    "domain": "Banking & Fintech",
+    "case": "Digital Loan Approval Delays",
+    "file": "02-banking-fintech/README.md",
+    "id": "BF47",
+    "question": "Which risk, decision-quality, and applicant-treatment measures must remain acceptable?",
+    "ask": "Risk / Compliance owners",
+    "purpose": "Defines authorised guardrails alongside speed.",
+    "section": 7
+  },
+  {
+    "domain": "Banking & Fintech",
+    "case": "Digital Loan Approval Delays",
+    "file": "02-banking-fintech/README.md",
+    "id": "BF48",
+    "question": "Who owns investigation of overdue applications after rollout?",
+    "ask": "Credit operations owner",
+    "purpose": "Keeps ongoing exception accountability.",
+    "section": 7
+  },
+  {
+    "domain": "Healthcare",
+    "case": "Patient Appointment Challenges",
+    "file": "03-healthcare/README.md",
+    "id": "HC01",
+    "question": "Which patient-access problem should this scheduling change address first?",
+    "ask": "Clinic manager / Patient representatives",
+    "purpose": "Sets the outcome without assuming a booking tool.",
+    "section": 0
+  },
+  {
+    "domain": "Healthcare",
+    "case": "Patient Appointment Challenges",
+    "file": "03-healthcare/README.md",
+    "id": "HC02",
+    "question": "What type of waiting time are patients reporting?",
+    "ask": "Patients / Clinic manager",
+    "purpose": "Separates appointment lead time from in-clinic waiting.",
+    "section": 0
+  },
+  {
+    "domain": "Healthcare",
+    "case": "Patient Appointment Challenges",
+    "file": "03-healthcare/README.md",
+    "id": "HC03",
+    "question": "Which appointment services are included in the proposed change?",
+    "ask": "Clinic manager",
+    "purpose": "Defines the operational boundary.",
+    "section": 0
+  },
+  {
+    "domain": "Healthcare",
+    "case": "Patient Appointment Challenges",
+    "file": "03-healthcare/README.md",
+    "id": "HC04",
+    "question": "Which patient groups have the greatest difficulty securing suitable appointments?",
+    "ask": "Patients / Access team",
+    "purpose": "Identifies unequal access experiences.",
+    "section": 0
+  },
+  {
+    "domain": "Healthcare",
+    "case": "Patient Appointment Challenges",
+    "file": "03-healthcare/README.md",
+    "id": "HC05",
+    "question": "How often do confirmed appointments conflict in the current records?",
+    "ask": "Booking team / Analytics",
+    "purpose": "Establishes evidence of the reported issue.",
+    "section": 0
+  },
+  {
+    "domain": "Healthcare",
+    "case": "Patient Appointment Challenges",
+    "file": "03-healthcare/README.md",
+    "id": "HC06",
+    "question": "What consequences do these conflicts create for patients and clinic staff?",
+    "ask": "Patients / Clinicians",
+    "purpose": "Prioritises impact rather than inconvenience alone.",
+    "section": 0
+  },
+  {
+    "domain": "Healthcare",
+    "case": "Patient Appointment Challenges",
+    "file": "03-healthcare/README.md",
+    "id": "HC07",
+    "question": "Can you walk through a recent appointment from request to completed visit?",
+    "ask": "Booking team",
+    "purpose": "Reveals handoffs and actual steps.",
+    "section": 1
+  },
+  {
+    "domain": "Healthcare",
+    "case": "Patient Appointment Challenges",
+    "file": "03-healthcare/README.md",
+    "id": "HC08",
+    "question": "Where does the patient wait for a booking decision or response?",
+    "ask": "Booking team / Patients",
+    "purpose": "Locates avoidable delay in the process.",
+    "section": 1
+  },
+  {
+    "domain": "Healthcare",
+    "case": "Patient Appointment Challenges",
+    "file": "03-healthcare/README.md",
+    "id": "HC09",
+    "question": "How is available clinician time turned into bookable slots?",
+    "ask": "Scheduling owner",
+    "purpose": "Explores the capacity construction.",
+    "section": 1
+  },
+  {
+    "domain": "Healthcare",
+    "case": "Patient Appointment Challenges",
+    "file": "03-healthcare/README.md",
+    "id": "HC10",
+    "question": "Which rooms, equipment, or support staff constrain appointment availability?",
+    "ask": "Clinic operations",
+    "purpose": "Exposes dependencies beyond the clinician calendar.",
+    "section": 1
+  },
+  {
+    "domain": "Healthcare",
+    "case": "Patient Appointment Challenges",
+    "file": "03-healthcare/README.md",
+    "id": "HC11",
+    "question": "How do booked duration and actual visit duration differ by service?",
+    "ask": "Clinicians / Analytics",
+    "purpose": "Tests whether slot assumptions match practice.",
+    "section": 1
+  },
+  {
+    "domain": "Healthcare",
+    "case": "Patient Appointment Challenges",
+    "file": "03-healthcare/README.md",
+    "id": "HC12",
+    "question": "How are cancellations and missed visits represented in capacity reports?",
+    "ask": "Analytics / Booking team",
+    "purpose": "Prevents misleading utilisation measures.",
+    "section": 1
+  },
+  {
+    "domain": "Healthcare",
+    "case": "Patient Appointment Challenges",
+    "file": "03-healthcare/README.md",
+    "id": "HC13",
+    "question": "Who defines the duration rules for each appointment type?",
+    "ask": "Clinical / Scheduling owners",
+    "purpose": "Identifies authority for the time requirement.",
+    "section": 2
+  },
+  {
+    "domain": "Healthcare",
+    "case": "Patient Appointment Challenges",
+    "file": "03-healthcare/README.md",
+    "id": "HC14",
+    "question": "Which approved rules determine appointment priority?",
+    "ask": "Clinical governance owner",
+    "purpose": "Clarifies clinical input without inventing triage rules.",
+    "section": 2
+  },
+  {
+    "domain": "Healthcare",
+    "case": "Patient Appointment Challenges",
+    "file": "03-healthcare/README.md",
+    "id": "HC15",
+    "question": "What happens when a patient needs a service not covered by the available slot types?",
+    "ask": "Booking team / Clinicians",
+    "purpose": "Reveals non-standard scheduling paths.",
+    "section": 2
+  },
+  {
+    "domain": "Healthcare",
+    "case": "Patient Appointment Challenges",
+    "file": "03-healthcare/README.md",
+    "id": "HC16",
+    "question": "How is a clinician absence handled for already confirmed patients?",
+    "ask": "Clinic operations",
+    "purpose": "Defines disruption and rebooking ownership.",
+    "section": 2
+  },
+  {
+    "domain": "Healthcare",
+    "case": "Patient Appointment Challenges",
+    "file": "03-healthcare/README.md",
+    "id": "HC17",
+    "question": "What happens when two booking channels request the same slot?",
+    "ask": "IT / Scheduling owner",
+    "purpose": "Identifies concurrent-booking behaviour.",
+    "section": 2
+  },
+  {
+    "domain": "Healthcare",
+    "case": "Patient Appointment Challenges",
+    "file": "03-healthcare/README.md",
+    "id": "HC18",
+    "question": "What conditions permit overbooking, if any?",
+    "ask": "Clinical / Operations owners",
+    "purpose": "Requests the authorised exception policy.",
+    "section": 2
+  },
+  {
+    "domain": "Healthcare",
+    "case": "Patient Appointment Challenges",
+    "file": "03-healthcare/README.md",
+    "id": "HC19",
+    "question": "What availability information do patients need before choosing an appointment?",
+    "ask": "Patients / Booking team",
+    "purpose": "Connects visibility to the patient\u2019s choice.",
+    "section": 3
+  },
+  {
+    "domain": "Healthcare",
+    "case": "Patient Appointment Challenges",
+    "file": "03-healthcare/README.md",
+    "id": "HC20",
+    "question": "Which booking instructions do patients struggle to understand?",
+    "ask": "Patients / Reception",
+    "purpose": "Finds actionable communication gaps.",
+    "section": 3
+  },
+  {
+    "domain": "Healthcare",
+    "case": "Patient Appointment Challenges",
+    "file": "03-healthcare/README.md",
+    "id": "HC21",
+    "question": "How can patients reschedule when they cannot use the digital channel?",
+    "ask": "Patients / Reception",
+    "purpose": "Includes assisted and non-digital access.",
+    "section": 3
+  },
+  {
+    "domain": "Healthcare",
+    "case": "Patient Appointment Challenges",
+    "file": "03-healthcare/README.md",
+    "id": "HC22",
+    "question": "What appointment changes must be communicated directly to the patient?",
+    "ask": "Scheduling / Patient representatives",
+    "purpose": "Defines information needed after disruption.",
+    "section": 3
+  },
+  {
+    "domain": "Healthcare",
+    "case": "Patient Appointment Challenges",
+    "file": "03-healthcare/README.md",
+    "id": "HC23",
+    "question": "How is a carer\u2019s involvement authorised and recorded?",
+    "ask": "Privacy / Reception owners",
+    "purpose": "Clarifies representation without assuming consent.",
+    "section": 3
+  },
+  {
+    "domain": "Healthcare",
+    "case": "Patient Appointment Challenges",
+    "file": "03-healthcare/README.md",
+    "id": "HC24",
+    "question": "Which language or accessibility needs affect appointment confirmation?",
+    "ask": "Patients / Accessibility owner",
+    "purpose": "Identifies inclusive communication needs.",
+    "section": 3
+  },
+  {
+    "domain": "Healthcare",
+    "case": "Patient Appointment Challenges",
+    "file": "03-healthcare/README.md",
+    "id": "HC25",
+    "question": "Which record is authoritative for the booked appointment?",
+    "ask": "IT / Scheduling owner",
+    "purpose": "Establishes the source of truth.",
+    "section": 4
+  },
+  {
+    "domain": "Healthcare",
+    "case": "Patient Appointment Challenges",
+    "file": "03-healthcare/README.md",
+    "id": "HC26",
+    "question": "How are updates synchronised between the booking calendar and other clinic systems?",
+    "ask": "Integration owner",
+    "purpose": "Reveals coordination and timing gaps.",
+    "section": 4
+  },
+  {
+    "domain": "Healthcare",
+    "case": "Patient Appointment Challenges",
+    "file": "03-healthcare/README.md",
+    "id": "HC27",
+    "question": "What minimum information is necessary to reserve a slot?",
+    "ask": "Privacy / Booking owners",
+    "purpose": "Avoids collecting unnecessary patient information.",
+    "section": 4
+  },
+  {
+    "domain": "Healthcare",
+    "case": "Patient Appointment Challenges",
+    "file": "03-healthcare/README.md",
+    "id": "HC28",
+    "question": "How are duplicate patient records recognised before scheduling?",
+    "ask": "Records / Registration team",
+    "purpose": "Connects identity quality to booking reliability.",
+    "section": 4
+  },
+  {
+    "domain": "Healthcare",
+    "case": "Patient Appointment Challenges",
+    "file": "03-healthcare/README.md",
+    "id": "HC29",
+    "question": "What happens when an appointment update fails to reach another system?",
+    "ask": "IT / Clinic operations",
+    "purpose": "Defines visible failure and reconciliation.",
+    "section": 4
+  },
+  {
+    "domain": "Healthcare",
+    "case": "Patient Appointment Challenges",
+    "file": "03-healthcare/README.md",
+    "id": "HC30",
+    "question": "Which appointment history is needed to resolve a booking dispute?",
+    "ask": "Records / Scheduling owner",
+    "purpose": "Defines evidence required for investigation.",
+    "section": 4
+  },
+  {
+    "domain": "Healthcare",
+    "case": "Patient Appointment Challenges",
+    "file": "03-healthcare/README.md",
+    "id": "HC31",
+    "question": "What confirmation response time is acceptable for each booking channel?",
+    "ask": "Clinic manager / Patients",
+    "purpose": "Establishes performance expectations to agree.",
+    "section": 5
+  },
+  {
+    "domain": "Healthcare",
+    "case": "Patient Appointment Challenges",
+    "file": "03-healthcare/README.md",
+    "id": "HC32",
+    "question": "What scheduling functions must continue during a system outage?",
+    "ask": "Clinic operations / IT",
+    "purpose": "Defines continuity needs.",
+    "section": 5
+  },
+  {
+    "domain": "Healthcare",
+    "case": "Patient Appointment Challenges",
+    "file": "03-healthcare/README.md",
+    "id": "HC33",
+    "question": "Who may view or change appointment details?",
+    "ask": "Security / Scheduling owner",
+    "purpose": "Clarifies access and modification rights.",
+    "section": 5
+  },
+  {
+    "domain": "Healthcare",
+    "case": "Patient Appointment Challenges",
+    "file": "03-healthcare/README.md",
+    "id": "HC34",
+    "question": "Which privacy and retention obligations apply to the appointment information?",
+    "ask": "Privacy / Legal owners",
+    "purpose": "Requests authoritative applicable requirements.",
+    "section": 5
+  },
+  {
+    "domain": "Healthcare",
+    "case": "Patient Appointment Challenges",
+    "file": "03-healthcare/README.md",
+    "id": "HC35",
+    "question": "How should a patient report an urgent concern encountered while booking?",
+    "ask": "Clinical governance / Reception",
+    "purpose": "Defines the approved route to qualified support.",
+    "section": 5
+  },
+  {
+    "domain": "Healthcare",
+    "case": "Patient Appointment Challenges",
+    "file": "03-healthcare/README.md",
+    "id": "HC36",
+    "question": "Which booking errors require immediate clinical or operational escalation?",
+    "ask": "Clinical / Scheduling owners",
+    "purpose": "Identifies safety-relevant exception handling.",
+    "section": 5
+  },
+  {
+    "domain": "Healthcare",
+    "case": "Patient Appointment Challenges",
+    "file": "03-healthcare/README.md",
+    "id": "HC37",
+    "question": "Which clinic or service offers a suitable bounded pilot?",
+    "ask": "Clinic manager",
+    "purpose": "Supports a manageable first change.",
+    "section": 6
+  },
+  {
+    "domain": "Healthcare",
+    "case": "Patient Appointment Challenges",
+    "file": "03-healthcare/README.md",
+    "id": "HC38",
+    "question": "Which current scheduling rules must remain in force during the pilot?",
+    "ask": "Clinical / Scheduling owners",
+    "purpose": "Protects necessary constraints.",
+    "section": 6
+  },
+  {
+    "domain": "Healthcare",
+    "case": "Patient Appointment Challenges",
+    "file": "03-healthcare/README.md",
+    "id": "HC39",
+    "question": "Who decides between increased slot utilisation and longer visit buffers?",
+    "ask": "Clinical / Operations owners",
+    "purpose": "Makes the capacity-versus-quality trade-off explicit.",
+    "section": 6
+  },
+  {
+    "domain": "Healthcare",
+    "case": "Patient Appointment Challenges",
+    "file": "03-healthcare/README.md",
+    "id": "HC40",
+    "question": "What staff training is required before changing the booking workflow?",
+    "ask": "Reception / Clinic manager",
+    "purpose": "Identifies transition needs.",
+    "section": 6
+  },
+  {
+    "domain": "Healthcare",
+    "case": "Patient Appointment Challenges",
+    "file": "03-healthcare/README.md",
+    "id": "HC41",
+    "question": "Which external scheduling dependency could limit the proposed improvement?",
+    "ask": "IT / Vendor contact",
+    "purpose": "Tests feasibility and coordination.",
+    "section": 6
+  },
+  {
+    "domain": "Healthcare",
+    "case": "Patient Appointment Challenges",
+    "file": "03-healthcare/README.md",
+    "id": "HC42",
+    "question": "Who can approve changes to appointment priority or duration rules?",
+    "ask": "Clinical governance owner",
+    "purpose": "Establishes correct decision authority.",
+    "section": 6
+  },
+  {
+    "domain": "Healthcare",
+    "case": "Patient Appointment Challenges",
+    "file": "03-healthcare/README.md",
+    "id": "HC43",
+    "question": "Which conflicting-booking scenarios must be tested before use?",
+    "ask": "QA / Booking team",
+    "purpose": "Defines essential acceptance coverage.",
+    "section": 7
+  },
+  {
+    "domain": "Healthcare",
+    "case": "Patient Appointment Challenges",
+    "file": "03-healthcare/README.md",
+    "id": "HC44",
+    "question": "Who will validate the new journey with patients who need assisted access?",
+    "ask": "Patient representatives / Reception",
+    "purpose": "Includes affected non-digital users.",
+    "section": 7
+  },
+  {
+    "domain": "Healthcare",
+    "case": "Patient Appointment Challenges",
+    "file": "03-healthcare/README.md",
+    "id": "HC45",
+    "question": "How will we verify that patient and staff calendars show the same confirmed booking?",
+    "ask": "QA / Scheduling owner",
+    "purpose": "Defines cross-view consistency evidence.",
+    "section": 7
+  },
+  {
+    "domain": "Healthcare",
+    "case": "Patient Appointment Challenges",
+    "file": "03-healthcare/README.md",
+    "id": "HC46",
+    "question": "How will we compare waiting-time changes across equivalent appointment services?",
+    "ask": "Analytics / Clinical owner",
+    "purpose": "Avoids misreading a changing service mix.",
+    "section": 7
+  },
+  {
+    "domain": "Healthcare",
+    "case": "Patient Appointment Challenges",
+    "file": "03-healthcare/README.md",
+    "id": "HC47",
+    "question": "Which care-access and patient-experience measures must not worsen?",
+    "ask": "Clinical / Patient representatives",
+    "purpose": "Sets quality guardrails alongside utilisation.",
+    "section": 7
+  },
+  {
+    "domain": "Healthcare",
+    "case": "Patient Appointment Challenges",
+    "file": "03-healthcare/README.md",
+    "id": "HC48",
+    "question": "Who owns unresolved booking conflicts after launch?",
+    "ask": "Scheduling owner",
+    "purpose": "Maintains exception accountability.",
+    "section": 7
+  },
+  {
+    "domain": "Hospitality",
+    "case": "Booking & Guest Experience Issues",
+    "file": "04-hospitality/README.md",
+    "id": "HP01",
+    "question": "Which booking or guest-experience outcome needs improvement first?",
+    "ask": "Hotel manager",
+    "purpose": "Prioritises the business need.",
+    "section": 0
+  },
+  {
+    "domain": "Hospitality",
+    "case": "Booking & Guest Experience Issues",
+    "file": "04-hospitality/README.md",
+    "id": "HP02",
+    "question": "What counts as a cancellation in the current reporting?",
+    "ask": "Reservations / Analytics",
+    "purpose": "Separates guest cancellation from operational removal.",
+    "section": 0
+  },
+  {
+    "domain": "Hospitality",
+    "case": "Booking & Guest Experience Issues",
+    "file": "04-hospitality/README.md",
+    "id": "HP03",
+    "question": "Which stay dates, properties, or channels are most affected?",
+    "ask": "Analytics / Reservations",
+    "purpose": "Identifies the relevant population.",
+    "section": 0
+  },
+  {
+    "domain": "Hospitality",
+    "case": "Booking & Guest Experience Issues",
+    "file": "04-hospitality/README.md",
+    "id": "HP04",
+    "question": "How is a pricing inconsistency identified in practice?",
+    "ask": "Revenue management / Guests",
+    "purpose": "Clarifies the discrepancy to investigate.",
+    "section": 0
+  },
+  {
+    "domain": "Hospitality",
+    "case": "Booking & Guest Experience Issues",
+    "file": "04-hospitality/README.md",
+    "id": "HP05",
+    "question": "Which parts of the stay receive the most consequential complaints?",
+    "ask": "Guest relations",
+    "purpose": "Prioritises impact within the experience.",
+    "section": 0
+  },
+  {
+    "domain": "Hospitality",
+    "case": "Booking & Guest Experience Issues",
+    "file": "04-hospitality/README.md",
+    "id": "HP06",
+    "question": "What commercial effect accompanies the dissatisfaction?",
+    "ask": "Finance / Hotel manager",
+    "purpose": "Connects service problems to cost and value.",
+    "section": 0
+  },
+  {
+    "domain": "Hospitality",
+    "case": "Booking & Guest Experience Issues",
+    "file": "04-hospitality/README.md",
+    "id": "HP07",
+    "question": "Can you trace a recent disputed booking from search to final bill?",
+    "ask": "Reservations / Front desk",
+    "purpose": "Exposes promise-to-delivery differences.",
+    "section": 1
+  },
+  {
+    "domain": "Hospitality",
+    "case": "Booking & Guest Experience Issues",
+    "file": "04-hospitality/README.md",
+    "id": "HP08",
+    "question": "At which stage are most cancellations initiated?",
+    "ask": "Reservations / Analytics",
+    "purpose": "Narrows the cancellation mechanism.",
+    "section": 1
+  },
+  {
+    "domain": "Hospitality",
+    "case": "Booking & Guest Experience Issues",
+    "file": "04-hospitality/README.md",
+    "id": "HP09",
+    "question": "How is cancellation timing recorded relative to the planned arrival?",
+    "ask": "Analytics",
+    "purpose": "Enables meaningful lead-time comparisons.",
+    "section": 1
+  },
+  {
+    "domain": "Hospitality",
+    "case": "Booking & Guest Experience Issues",
+    "file": "04-hospitality/README.md",
+    "id": "HP10",
+    "question": "What room availability is visible to each booking channel?",
+    "ask": "Reservations / Distribution owner",
+    "purpose": "Checks consistency before confirmation.",
+    "section": 1
+  },
+  {
+    "domain": "Hospitality",
+    "case": "Booking & Guest Experience Issues",
+    "file": "04-hospitality/README.md",
+    "id": "HP11",
+    "question": "How is a room marked ready for guest arrival?",
+    "ask": "Housekeeping / Front desk",
+    "purpose": "Connects booking promises to operating readiness.",
+    "section": 1
+  },
+  {
+    "domain": "Hospitality",
+    "case": "Booking & Guest Experience Issues",
+    "file": "04-hospitality/README.md",
+    "id": "HP12",
+    "question": "Which handoff most often requires staff to re-enter or correct booking details?",
+    "ask": "Front desk / Reservations",
+    "purpose": "Identifies costly process rework.",
+    "section": 1
+  },
+  {
+    "domain": "Hospitality",
+    "case": "Booking & Guest Experience Issues",
+    "file": "04-hospitality/README.md",
+    "id": "HP13",
+    "question": "Which source determines the applicable rate for a reservation?",
+    "ask": "Revenue management",
+    "purpose": "Establishes rate authority.",
+    "section": 2
+  },
+  {
+    "domain": "Hospitality",
+    "case": "Booking & Guest Experience Issues",
+    "file": "04-hospitality/README.md",
+    "id": "HP14",
+    "question": "What conditions allow the agreed booking price to change?",
+    "ask": "Revenue / Policy owner",
+    "purpose": "Clarifies the guest\u2019s price commitment.",
+    "section": 2
+  },
+  {
+    "domain": "Hospitality",
+    "case": "Booking & Guest Experience Issues",
+    "file": "04-hospitality/README.md",
+    "id": "HP15",
+    "question": "When are taxes, fees, and optional services disclosed to the guest?",
+    "ask": "Revenue / Guest representatives",
+    "purpose": "Identifies incomplete price information.",
+    "section": 2
+  },
+  {
+    "domain": "Hospitality",
+    "case": "Booking & Guest Experience Issues",
+    "file": "04-hospitality/README.md",
+    "id": "HP16",
+    "question": "Which cancellation policy applies to each rate and channel?",
+    "ask": "Reservations / Policy owner",
+    "purpose": "Defines policy variation without assuming uniform terms.",
+    "section": 2
+  },
+  {
+    "domain": "Hospitality",
+    "case": "Booking & Guest Experience Issues",
+    "file": "04-hospitality/README.md",
+    "id": "HP17",
+    "question": "How are room-type substitutions authorised?",
+    "ask": "Hotel manager / Front desk",
+    "purpose": "Exposes a material service exception.",
+    "section": 2
+  },
+  {
+    "domain": "Hospitality",
+    "case": "Booking & Guest Experience Issues",
+    "file": "04-hospitality/README.md",
+    "id": "HP18",
+    "question": "What happens when confirmed reservations exceed available suitable rooms?",
+    "ask": "Reservations / Hotel manager",
+    "purpose": "Defines overbooking response ownership.",
+    "section": 2
+  },
+  {
+    "domain": "Hospitality",
+    "case": "Booking & Guest Experience Issues",
+    "file": "04-hospitality/README.md",
+    "id": "HP19",
+    "question": "What does the guest understand the confirmation to guarantee?",
+    "ask": "Guests / Reservations",
+    "purpose": "Checks expectations against actual commitments.",
+    "section": 3
+  },
+  {
+    "domain": "Hospitality",
+    "case": "Booking & Guest Experience Issues",
+    "file": "04-hospitality/README.md",
+    "id": "HP20",
+    "question": "Which pre-arrival information prevents avoidable guest confusion?",
+    "ask": "Guests / Front desk",
+    "purpose": "Clarifies useful communication needs.",
+    "section": 3
+  },
+  {
+    "domain": "Hospitality",
+    "case": "Booking & Guest Experience Issues",
+    "file": "04-hospitality/README.md",
+    "id": "HP21",
+    "question": "How can a guest amend a booking made through a third party?",
+    "ask": "Guests / Channel owner",
+    "purpose": "Reveals cross-channel service friction.",
+    "section": 3
+  },
+  {
+    "domain": "Hospitality",
+    "case": "Booking & Guest Experience Issues",
+    "file": "04-hospitality/README.md",
+    "id": "HP22",
+    "question": "What response should follow a report that a room does not match the booking?",
+    "ask": "Guest relations / Front desk",
+    "purpose": "Defines complaint handling and immediate next steps.",
+    "section": 3
+  },
+  {
+    "domain": "Hospitality",
+    "case": "Booking & Guest Experience Issues",
+    "file": "04-hospitality/README.md",
+    "id": "HP23",
+    "question": "Who can authorise compensation or alternative accommodation?",
+    "ask": "Hotel manager / Finance",
+    "purpose": "Identifies service-recovery authority.",
+    "section": 3
+  },
+  {
+    "domain": "Hospitality",
+    "case": "Booking & Guest Experience Issues",
+    "file": "04-hospitality/README.md",
+    "id": "HP24",
+    "question": "How do staff confirm that a guest complaint has been resolved?",
+    "ask": "Guest relations",
+    "purpose": "Defines closure from the guest\u2019s perspective.",
+    "section": 3
+  },
+  {
+    "domain": "Hospitality",
+    "case": "Booking & Guest Experience Issues",
+    "file": "04-hospitality/README.md",
+    "id": "HP25",
+    "question": "Which booking record is authoritative when channels disagree?",
+    "ask": "IT / Reservations",
+    "purpose": "Establishes the source of truth.",
+    "section": 4
+  },
+  {
+    "domain": "Hospitality",
+    "case": "Booking & Guest Experience Issues",
+    "file": "04-hospitality/README.md",
+    "id": "HP26",
+    "question": "How quickly do room availability changes reach the external channels?",
+    "ask": "Distribution / IT",
+    "purpose": "Tests synchronisation and stale availability.",
+    "section": 4
+  },
+  {
+    "domain": "Hospitality",
+    "case": "Booking & Guest Experience Issues",
+    "file": "04-hospitality/README.md",
+    "id": "HP27",
+    "question": "What happens when a channel update fails?",
+    "ask": "IT / Reservations",
+    "purpose": "Defines failure visibility and recovery.",
+    "section": 4
+  },
+  {
+    "domain": "Hospitality",
+    "case": "Booking & Guest Experience Issues",
+    "file": "04-hospitality/README.md",
+    "id": "HP28",
+    "question": "How are deposits and refunds linked to the correct reservation?",
+    "ask": "Finance / Payments owner",
+    "purpose": "Enables reliable financial reconciliation.",
+    "section": 4
+  },
+  {
+    "domain": "Hospitality",
+    "case": "Booking & Guest Experience Issues",
+    "file": "04-hospitality/README.md",
+    "id": "HP29",
+    "question": "How are guest preferences shared without losing their meaning or access restrictions?",
+    "ask": "Guest services / Privacy owner",
+    "purpose": "Clarifies usable and controlled guest information.",
+    "section": 4
+  },
+  {
+    "domain": "Hospitality",
+    "case": "Booking & Guest Experience Issues",
+    "file": "04-hospitality/README.md",
+    "id": "HP30",
+    "question": "Which data distinguishes a channel-price error from a manual front-desk adjustment?",
+    "ask": "Revenue / IT",
+    "purpose": "Separates different discrepancy mechanisms.",
+    "section": 4
+  },
+  {
+    "domain": "Hospitality",
+    "case": "Booking & Guest Experience Issues",
+    "file": "04-hospitality/README.md",
+    "id": "HP31",
+    "question": "What booking and check-in workload must the process support at peak arrival time?",
+    "ask": "Front desk / IT",
+    "purpose": "Defines realistic operating volume.",
+    "section": 5
+  },
+  {
+    "domain": "Hospitality",
+    "case": "Booking & Guest Experience Issues",
+    "file": "04-hospitality/README.md",
+    "id": "HP32",
+    "question": "What service should continue if the reservation system is unavailable?",
+    "ask": "Hotel operations",
+    "purpose": "Clarifies continuity arrangements.",
+    "section": 5
+  },
+  {
+    "domain": "Hospitality",
+    "case": "Booking & Guest Experience Issues",
+    "file": "04-hospitality/README.md",
+    "id": "HP33",
+    "question": "Who may alter rates, room allocation, and refund status?",
+    "ask": "Security / Commercial owners",
+    "purpose": "Defines authority for sensitive actions.",
+    "section": 5
+  },
+  {
+    "domain": "Hospitality",
+    "case": "Booking & Guest Experience Issues",
+    "file": "04-hospitality/README.md",
+    "id": "HP34",
+    "question": "Which guest-accessibility needs affect booking and arrival arrangements?",
+    "ask": "Guests / Accessibility owner",
+    "purpose": "Includes requirements beyond standard room selection.",
+    "section": 5
+  },
+  {
+    "domain": "Hospitality",
+    "case": "Booking & Guest Experience Issues",
+    "file": "04-hospitality/README.md",
+    "id": "HP35",
+    "question": "Which privacy and consumer-policy obligations apply to the relevant property and channel?",
+    "ask": "Policy / Legal owners",
+    "purpose": "Requests applicable authoritative requirements.",
+    "section": 5
+  },
+  {
+    "domain": "Hospitality",
+    "case": "Booking & Guest Experience Issues",
+    "file": "04-hospitality/README.md",
+    "id": "HP36",
+    "question": "What information must be retained to investigate a reservation dispute?",
+    "ask": "Records / Finance",
+    "purpose": "Defines required evidence and access.",
+    "section": 5
+  },
+  {
+    "domain": "Hospitality",
+    "case": "Booking & Guest Experience Issues",
+    "file": "04-hospitality/README.md",
+    "id": "HP37",
+    "question": "Which guest issue needs a near-term remedy before broader process changes?",
+    "ask": "Hotel manager / Guest relations",
+    "purpose": "Separates containment from transformation.",
+    "section": 6
+  },
+  {
+    "domain": "Hospitality",
+    "case": "Booking & Guest Experience Issues",
+    "file": "04-hospitality/README.md",
+    "id": "HP38",
+    "question": "Which property or channel is suitable for testing a revised workflow?",
+    "ask": "Operations / Commercial owner",
+    "purpose": "Defines a bounded pilot population.",
+    "section": 6
+  },
+  {
+    "domain": "Hospitality",
+    "case": "Booking & Guest Experience Issues",
+    "file": "04-hospitality/README.md",
+    "id": "HP39",
+    "question": "What would we stop or defer to fund this improvement?",
+    "ask": "Hotel manager",
+    "purpose": "Exposes opportunity cost.",
+    "section": 6
+  },
+  {
+    "domain": "Hospitality",
+    "case": "Booking & Guest Experience Issues",
+    "file": "04-hospitality/README.md",
+    "id": "HP40",
+    "question": "Who approves changes to rate, cancellation, and compensation rules?",
+    "ask": "Commercial / Policy owner",
+    "purpose": "Establishes decision rights.",
+    "section": 6
+  },
+  {
+    "domain": "Hospitality",
+    "case": "Booking & Guest Experience Issues",
+    "file": "04-hospitality/README.md",
+    "id": "HP41",
+    "question": "Which housekeeping or staffing constraint could prevent the proposed guest promise?",
+    "ask": "Operations",
+    "purpose": "Tests deliverability of the service expectation.",
+    "section": 6
+  },
+  {
+    "domain": "Hospitality",
+    "case": "Booking & Guest Experience Issues",
+    "file": "04-hospitality/README.md",
+    "id": "HP42",
+    "question": "What outcome would justify retaining the current workflow instead of replacing it?",
+    "ask": "Hotel manager",
+    "purpose": "Keeps a baseline alternative open.",
+    "section": 6
+  },
+  {
+    "domain": "Hospitality",
+    "case": "Booking & Guest Experience Issues",
+    "file": "04-hospitality/README.md",
+    "id": "HP43",
+    "question": "Which bookings should be included in acceptance testing across channels?",
+    "ask": "QA / Reservations",
+    "purpose": "Defines representative cases.",
+    "section": 7
+  },
+  {
+    "domain": "Hospitality",
+    "case": "Booking & Guest Experience Issues",
+    "file": "04-hospitality/README.md",
+    "id": "HP44",
+    "question": "How will we verify that the guest sees the same committed price throughout the journey?",
+    "ask": "QA / Revenue management",
+    "purpose": "Defines price-consistency evidence.",
+    "section": 7
+  },
+  {
+    "domain": "Hospitality",
+    "case": "Booking & Guest Experience Issues",
+    "file": "04-hospitality/README.md",
+    "id": "HP45",
+    "question": "Who will validate cancellation and amendment instructions with guests?",
+    "ask": "Product / Guest representatives",
+    "purpose": "Checks usability of important policies.",
+    "section": 7
+  },
+  {
+    "domain": "Hospitality",
+    "case": "Booking & Guest Experience Issues",
+    "file": "04-hospitality/README.md",
+    "id": "HP46",
+    "question": "How will we separate improvement from seasonal changes in guest mix?",
+    "ask": "Analytics / Hotel manager",
+    "purpose": "Supports a comparable evaluation.",
+    "section": 7
+  },
+  {
+    "domain": "Hospitality",
+    "case": "Booking & Guest Experience Issues",
+    "file": "04-hospitality/README.md",
+    "id": "HP47",
+    "question": "Which margin and service-recovery measures must not deteriorate?",
+    "ask": "Finance / Guest relations",
+    "purpose": "Protects economics and guest trust.",
+    "section": 7
+  },
+  {
+    "domain": "Hospitality",
+    "case": "Booking & Guest Experience Issues",
+    "file": "04-hospitality/README.md",
+    "id": "HP48",
+    "question": "Who owns recurring booking disputes after the change is introduced?",
+    "ask": "Reservations owner",
+    "purpose": "Maintains operational accountability.",
+    "section": 7
+  },
+  {
+    "domain": "IT Services & SaaS",
+    "case": "Scope Changes & Delivery Delays",
+    "file": "05-it-services-saas/README.md",
+    "id": "IT01",
+    "question": "What business outcome is the delayed delivery meant to enable?",
+    "ask": "Sponsor / Client owner",
+    "purpose": "Links delivery urgency to value.",
+    "section": 0
+  },
+  {
+    "domain": "IT Services & SaaS",
+    "case": "Scope Changes & Delivery Delays",
+    "file": "05-it-services-saas/README.md",
+    "id": "IT02",
+    "question": "What is counted as a scope change in the current reports?",
+    "ask": "Delivery / Commercial owner",
+    "purpose": "Separates new needs from clarifications and defects.",
+    "section": 0
+  },
+  {
+    "domain": "IT Services & SaaS",
+    "case": "Scope Changes & Delivery Delays",
+    "file": "05-it-services-saas/README.md",
+    "id": "IT03",
+    "question": "Which agreed scope or release baseline are we comparing against?",
+    "ask": "Product / Delivery owner",
+    "purpose": "Establishes the reference for impact analysis.",
+    "section": 0
+  },
+  {
+    "domain": "IT Services & SaaS",
+    "case": "Scope Changes & Delivery Delays",
+    "file": "05-it-services-saas/README.md",
+    "id": "IT04",
+    "question": "Which delivery commitment is currently at risk?",
+    "ask": "Delivery / Sponsor",
+    "purpose": "Defines the immediate decision deadline.",
+    "section": 0
+  },
+  {
+    "domain": "IT Services & SaaS",
+    "case": "Scope Changes & Delivery Delays",
+    "file": "05-it-services-saas/README.md",
+    "id": "IT05",
+    "question": "Which changes have caused the largest demonstrable rework or delay?",
+    "ask": "Delivery / Analytics",
+    "purpose": "Prioritises material impact over request volume.",
+    "section": 0
+  },
+  {
+    "domain": "IT Services & SaaS",
+    "case": "Scope Changes & Delivery Delays",
+    "file": "05-it-services-saas/README.md",
+    "id": "IT06",
+    "question": "What would be the consequence of delivering the original scope unchanged?",
+    "ask": "Client / Product owner",
+    "purpose": "Tests whether change is necessary for value.",
+    "section": 0
+  },
+  {
+    "domain": "IT Services & SaaS",
+    "case": "Scope Changes & Delivery Delays",
+    "file": "05-it-services-saas/README.md",
+    "id": "IT07",
+    "question": "Can we follow one recent change from request to release decision?",
+    "ask": "BA / Delivery lead",
+    "purpose": "Reveals the actual governance path.",
+    "section": 1
+  },
+  {
+    "domain": "IT Services & SaaS",
+    "case": "Scope Changes & Delivery Delays",
+    "file": "05-it-services-saas/README.md",
+    "id": "IT08",
+    "question": "Where does a change request wait longest for clarification or approval?",
+    "ask": "BA / Decision owners",
+    "purpose": "Locates decision latency.",
+    "section": 1
+  },
+  {
+    "domain": "IT Services & SaaS",
+    "case": "Scope Changes & Delivery Delays",
+    "file": "05-it-services-saas/README.md",
+    "id": "IT09",
+    "question": "What evidence separates late discovery from unapproved expansion?",
+    "ask": "BA / Client owner",
+    "purpose": "Distinguishes learning from weak control.",
+    "section": 1
+  },
+  {
+    "domain": "IT Services & SaaS",
+    "case": "Scope Changes & Delivery Delays",
+    "file": "05-it-services-saas/README.md",
+    "id": "IT10",
+    "question": "Which delivery estimate changed after the scope was understood more clearly?",
+    "ask": "Engineering / Delivery lead",
+    "purpose": "Tests estimation assumptions rather than blaming change.",
+    "section": 1
+  },
+  {
+    "domain": "IT Services & SaaS",
+    "case": "Scope Changes & Delivery Delays",
+    "file": "05-it-services-saas/README.md",
+    "id": "IT11",
+    "question": "How is work interrupted when a new request arrives during implementation?",
+    "ask": "Engineering / QA",
+    "purpose": "Reveals switching and partial-work costs.",
+    "section": 1
+  },
+  {
+    "domain": "IT Services & SaaS",
+    "case": "Scope Changes & Delivery Delays",
+    "file": "05-it-services-saas/README.md",
+    "id": "IT12",
+    "question": "Which dependencies caused delay even when requirements did not change?",
+    "ask": "Delivery / Engineering",
+    "purpose": "Challenges a single-cause explanation.",
+    "section": 1
+  },
+  {
+    "domain": "IT Services & SaaS",
+    "case": "Scope Changes & Delivery Delays",
+    "file": "05-it-services-saas/README.md",
+    "id": "IT13",
+    "question": "What evidence shows that the requested feature addresses a real user need?",
+    "ask": "Client / Users",
+    "purpose": "Prevents accepting a solution without its rationale.",
+    "section": 2
+  },
+  {
+    "domain": "IT Services & SaaS",
+    "case": "Scope Changes & Delivery Delays",
+    "file": "05-it-services-saas/README.md",
+    "id": "IT14",
+    "question": "Which terms or rules in the disputed requirement remain ambiguous?",
+    "ask": "BA / Users / QA",
+    "purpose": "Identifies the missing understanding.",
+    "section": 2
+  },
+  {
+    "domain": "IT Services & SaaS",
+    "case": "Scope Changes & Delivery Delays",
+    "file": "05-it-services-saas/README.md",
+    "id": "IT15",
+    "question": "What examples and exceptions did reviewers use when agreeing the requirement?",
+    "ask": "BA / Client reviewers",
+    "purpose": "Checks the depth of validation.",
+    "section": 2
+  },
+  {
+    "domain": "IT Services & SaaS",
+    "case": "Scope Changes & Delivery Delays",
+    "file": "05-it-services-saas/README.md",
+    "id": "IT16",
+    "question": "Which acceptance conditions changed with the new request?",
+    "ask": "Product / QA",
+    "purpose": "Defines the changed delivery expectation.",
+    "section": 2
+  },
+  {
+    "domain": "IT Services & SaaS",
+    "case": "Scope Changes & Delivery Delays",
+    "file": "05-it-services-saas/README.md",
+    "id": "IT17",
+    "question": "What happens when a client request contradicts an agreed business rule?",
+    "ask": "Product / Rule owner",
+    "purpose": "Defines conflict resolution authority.",
+    "section": 2
+  },
+  {
+    "domain": "IT Services & SaaS",
+    "case": "Scope Changes & Delivery Delays",
+    "file": "05-it-services-saas/README.md",
+    "id": "IT18",
+    "question": "Which assumptions were treated as confirmed when work began?",
+    "ask": "BA / Engineering",
+    "purpose": "Surfaces hidden commitments.",
+    "section": 2
+  },
+  {
+    "domain": "IT Services & SaaS",
+    "case": "Scope Changes & Delivery Delays",
+    "file": "05-it-services-saas/README.md",
+    "id": "IT19",
+    "question": "Who represents the users affected by the requested change?",
+    "ask": "Client / Product owner",
+    "purpose": "Finds input beyond the sponsor.",
+    "section": 3
+  },
+  {
+    "domain": "IT Services & SaaS",
+    "case": "Scope Changes & Delivery Delays",
+    "file": "05-it-services-saas/README.md",
+    "id": "IT20",
+    "question": "How do client representatives reach one agreed priority when they disagree?",
+    "ask": "Client decision owner",
+    "purpose": "Clarifies internal client governance.",
+    "section": 3
+  },
+  {
+    "domain": "IT Services & SaaS",
+    "case": "Scope Changes & Delivery Delays",
+    "file": "05-it-services-saas/README.md",
+    "id": "IT21",
+    "question": "How are delivery consequences explained before a client approves a change?",
+    "ask": "Delivery / Commercial owner",
+    "purpose": "Tests informed agreement.",
+    "section": 3
+  },
+  {
+    "domain": "IT Services & SaaS",
+    "case": "Scope Changes & Delivery Delays",
+    "file": "05-it-services-saas/README.md",
+    "id": "IT22",
+    "question": "Which status updates help the client understand unresolved scope decisions?",
+    "ask": "Client / Delivery lead",
+    "purpose": "Clarifies useful communication.",
+    "section": 3
+  },
+  {
+    "domain": "IT Services & SaaS",
+    "case": "Scope Changes & Delivery Delays",
+    "file": "05-it-services-saas/README.md",
+    "id": "IT23",
+    "question": "How is a rejected or deferred request explained to its requester?",
+    "ask": "Product / Client owner",
+    "purpose": "Maintains trust and a clear decision trail.",
+    "section": 3
+  },
+  {
+    "domain": "IT Services & SaaS",
+    "case": "Scope Changes & Delivery Delays",
+    "file": "05-it-services-saas/README.md",
+    "id": "IT24",
+    "question": "Who can confirm that the client understood the trade-off being accepted?",
+    "ask": "Client decision owner",
+    "purpose": "Establishes credible confirmation.",
+    "section": 3
+  },
+  {
+    "domain": "IT Services & SaaS",
+    "case": "Scope Changes & Delivery Delays",
+    "file": "05-it-services-saas/README.md",
+    "id": "IT25",
+    "question": "Where is the current authoritative requirement version maintained?",
+    "ask": "BA / Product owner",
+    "purpose": "Prevents conflicting implementation sources.",
+    "section": 4
+  },
+  {
+    "domain": "IT Services & SaaS",
+    "case": "Scope Changes & Delivery Delays",
+    "file": "05-it-services-saas/README.md",
+    "id": "IT26",
+    "question": "How are superseded requirements made visible to delivery teams?",
+    "ask": "BA / Engineering",
+    "purpose": "Avoids work from outdated instructions.",
+    "section": 4
+  },
+  {
+    "domain": "IT Services & SaaS",
+    "case": "Scope Changes & Delivery Delays",
+    "file": "05-it-services-saas/README.md",
+    "id": "IT27",
+    "question": "Which stories, interfaces, tests, and operating procedures depend on this change?",
+    "ask": "BA / Engineering / QA",
+    "purpose": "Defines impact coverage.",
+    "section": 4
+  },
+  {
+    "domain": "IT Services & SaaS",
+    "case": "Scope Changes & Delivery Delays",
+    "file": "05-it-services-saas/README.md",
+    "id": "IT28",
+    "question": "What external system or vendor agreement must change with the request?",
+    "ask": "Integration / Delivery owner",
+    "purpose": "Exposes external dependencies.",
+    "section": 4
+  },
+  {
+    "domain": "IT Services & SaaS",
+    "case": "Scope Changes & Delivery Delays",
+    "file": "05-it-services-saas/README.md",
+    "id": "IT29",
+    "question": "How is the change linked to its approval and intended release?",
+    "ask": "Product / Configuration owner",
+    "purpose": "Defines traceability of the decision.",
+    "section": 4
+  },
+  {
+    "domain": "IT Services & SaaS",
+    "case": "Scope Changes & Delivery Delays",
+    "file": "05-it-services-saas/README.md",
+    "id": "IT30",
+    "question": "What evidence is available to reconstruct why the current scope was chosen?",
+    "ask": "BA / Governance owner",
+    "purpose": "Supports accountable review of past choices.",
+    "section": 4
+  },
+  {
+    "domain": "IT Services & SaaS",
+    "case": "Scope Changes & Delivery Delays",
+    "file": "05-it-services-saas/README.md",
+    "id": "IT31",
+    "question": "Which quality conditions remain mandatory despite delivery pressure?",
+    "ask": "Engineering / QA / Security",
+    "purpose": "Protects agreed completion standards.",
+    "section": 5
+  },
+  {
+    "domain": "IT Services & SaaS",
+    "case": "Scope Changes & Delivery Delays",
+    "file": "05-it-services-saas/README.md",
+    "id": "IT32",
+    "question": "What security or privacy review is triggered by the proposed change?",
+    "ask": "Security / Privacy owner",
+    "purpose": "Identifies required specialist involvement.",
+    "section": 5
+  },
+  {
+    "domain": "IT Services & SaaS",
+    "case": "Scope Changes & Delivery Delays",
+    "file": "05-it-services-saas/README.md",
+    "id": "IT33",
+    "question": "What operational support must be ready for the new behaviour?",
+    "ask": "Support / Delivery owner",
+    "purpose": "Defines readiness beyond development.",
+    "section": 5
+  },
+  {
+    "domain": "IT Services & SaaS",
+    "case": "Scope Changes & Delivery Delays",
+    "file": "05-it-services-saas/README.md",
+    "id": "IT34",
+    "question": "What happens if a change cannot be completed without endangering the release objective?",
+    "ask": "Product / Delivery owner",
+    "purpose": "Defines a bounded delivery decision.",
+    "section": 5
+  },
+  {
+    "domain": "IT Services & SaaS",
+    "case": "Scope Changes & Delivery Delays",
+    "file": "05-it-services-saas/README.md",
+    "id": "IT35",
+    "question": "Which users need a migration or training step because of the change?",
+    "ask": "Users / Support",
+    "purpose": "Identifies transition requirements.",
+    "section": 5
+  },
+  {
+    "domain": "IT Services & SaaS",
+    "case": "Scope Changes & Delivery Delays",
+    "file": "05-it-services-saas/README.md",
+    "id": "IT36",
+    "question": "What rollback or recovery capability is needed for the changed workflow?",
+    "ask": "Engineering / Operations",
+    "purpose": "Clarifies failure recovery before release.",
+    "section": 5
+  },
+  {
+    "domain": "IT Services & SaaS",
+    "case": "Scope Changes & Delivery Delays",
+    "file": "05-it-services-saas/README.md",
+    "id": "IT37",
+    "question": "Which value would this change add compared with the next-best use of capacity?",
+    "ask": "Product / Sponsor",
+    "purpose": "Makes opportunity cost explicit.",
+    "section": 6
+  },
+  {
+    "domain": "IT Services & SaaS",
+    "case": "Scope Changes & Delivery Delays",
+    "file": "05-it-services-saas/README.md",
+    "id": "IT38",
+    "question": "Who has authority to accept the change and its delivery consequences?",
+    "ask": "Governance / Commercial owner",
+    "purpose": "Identifies the accountable approval route.",
+    "section": 6
+  },
+  {
+    "domain": "IT Services & SaaS",
+    "case": "Scope Changes & Delivery Delays",
+    "file": "05-it-services-saas/README.md",
+    "id": "IT39",
+    "question": "Which cost or date changes require a revised commercial agreement?",
+    "ask": "Commercial / Finance",
+    "purpose": "Clarifies contract-impact boundaries.",
+    "section": 6
+  },
+  {
+    "domain": "IT Services & SaaS",
+    "case": "Scope Changes & Delivery Delays",
+    "file": "05-it-services-saas/README.md",
+    "id": "IT40",
+    "question": "What scope can be deferred while preserving a useful release?",
+    "ask": "Product / Users",
+    "purpose": "Supports coherent incremental delivery.",
+    "section": 6
+  },
+  {
+    "domain": "IT Services & SaaS",
+    "case": "Scope Changes & Delivery Delays",
+    "file": "05-it-services-saas/README.md",
+    "id": "IT41",
+    "question": "What evidence would justify declining the requested change?",
+    "ask": "Sponsor / Product owner",
+    "purpose": "Makes rejection criteria transparent.",
+    "section": 6
+  },
+  {
+    "domain": "IT Services & SaaS",
+    "case": "Scope Changes & Delivery Delays",
+    "file": "05-it-services-saas/README.md",
+    "id": "IT42",
+    "question": "When will unresolved change decisions be escalated?",
+    "ask": "Delivery / Governance owner",
+    "purpose": "Defines an actionable decision deadline.",
+    "section": 6
+  },
+  {
+    "domain": "IT Services & SaaS",
+    "case": "Scope Changes & Delivery Delays",
+    "file": "05-it-services-saas/README.md",
+    "id": "IT43",
+    "question": "Which acceptance scenarios must be updated before the changed work is tested?",
+    "ask": "QA / BA",
+    "purpose": "Prevents stale coverage.",
+    "section": 7
+  },
+  {
+    "domain": "IT Services & SaaS",
+    "case": "Scope Changes & Delivery Delays",
+    "file": "05-it-services-saas/README.md",
+    "id": "IT44",
+    "question": "Who will validate that the revised scope still meets the intended user outcome?",
+    "ask": "Users / Product owner",
+    "purpose": "Checks value after trade-offs.",
+    "section": 7
+  },
+  {
+    "domain": "IT Services & SaaS",
+    "case": "Scope Changes & Delivery Delays",
+    "file": "05-it-services-saas/README.md",
+    "id": "IT45",
+    "question": "How will release evidence show which approved requirement version was implemented?",
+    "ask": "QA / Configuration owner",
+    "purpose": "Confirms alignment between decision and delivery.",
+    "section": 7
+  },
+  {
+    "domain": "IT Services & SaaS",
+    "case": "Scope Changes & Delivery Delays",
+    "file": "05-it-services-saas/README.md",
+    "id": "IT46",
+    "question": "How will we distinguish legitimate learning from avoidable requirement rework in review?",
+    "ask": "BA / Delivery owner",
+    "purpose": "Defines a fair improvement measure.",
+    "section": 7
+  },
+  {
+    "domain": "IT Services & SaaS",
+    "case": "Scope Changes & Delivery Delays",
+    "file": "05-it-services-saas/README.md",
+    "id": "IT47",
+    "question": "Which delivery and quality measures should accompany change counts?",
+    "ask": "Delivery / QA",
+    "purpose": "Avoids rewarding suppression of useful change.",
+    "section": 7
+  },
+  {
+    "domain": "IT Services & SaaS",
+    "case": "Scope Changes & Delivery Delays",
+    "file": "05-it-services-saas/README.md",
+    "id": "IT48",
+    "question": "Who will review whether the change delivered its expected benefit?",
+    "ask": "Product / Sponsor",
+    "purpose": "Keeps value assessment after release.",
+    "section": 7
+  },
+  {
+    "domain": "Logistics & Supply Chain",
+    "case": "Delivery Visibility & Fulfilment Costs",
+    "file": "06-logistics-supply-chain/README.md",
+    "id": "LS01",
+    "question": "Which delivery outcome should the improvement address first?",
+    "ask": "Logistics sponsor",
+    "purpose": "Prioritises reliability, visibility, cost, or another need.",
+    "section": 0
+  },
+  {
+    "domain": "Logistics & Supply Chain",
+    "case": "Delivery Visibility & Fulfilment Costs",
+    "file": "06-logistics-supply-chain/README.md",
+    "id": "LS02",
+    "question": "What does \u201cdelayed\u201d mean relative to the customer\u2019s promised delivery?",
+    "ask": "Logistics / Support",
+    "purpose": "Defines a meaningful service failure.",
+    "section": 0
+  },
+  {
+    "domain": "Logistics & Supply Chain",
+    "case": "Delivery Visibility & Fulfilment Costs",
+    "file": "06-logistics-supply-chain/README.md",
+    "id": "LS03",
+    "question": "Which costs are included in the reported fulfilment cost?",
+    "ask": "Finance",
+    "purpose": "Sets the economic boundary.",
+    "section": 0
+  },
+  {
+    "domain": "Logistics & Supply Chain",
+    "case": "Delivery Visibility & Fulfilment Costs",
+    "file": "06-logistics-supply-chain/README.md",
+    "id": "LS04",
+    "question": "Which shipment types, regions, or partners account for most of the deterioration?",
+    "ask": "Analytics / Logistics",
+    "purpose": "Finds actionable variation.",
+    "section": 0
+  },
+  {
+    "domain": "Logistics & Supply Chain",
+    "case": "Delivery Visibility & Fulfilment Costs",
+    "file": "06-logistics-supply-chain/README.md",
+    "id": "LS05",
+    "question": "What customer or operational harm follows inaccurate shipment status?",
+    "ask": "Customers / Support",
+    "purpose": "Identifies impact of poor visibility.",
+    "section": 0
+  },
+  {
+    "domain": "Logistics & Supply Chain",
+    "case": "Delivery Visibility & Fulfilment Costs",
+    "file": "06-logistics-supply-chain/README.md",
+    "id": "LS06",
+    "question": "What delivery commitment are we trying to preserve during the change?",
+    "ask": "Commercial / Logistics owner",
+    "purpose": "Clarifies the service constraint.",
+    "section": 0
+  },
+  {
+    "domain": "Logistics & Supply Chain",
+    "case": "Delivery Visibility & Fulfilment Costs",
+    "file": "06-logistics-supply-chain/README.md",
+    "id": "LS07",
+    "question": "Can we trace one delayed shipment across all physical handoffs?",
+    "ask": "Warehouse / Carrier / Operations",
+    "purpose": "Reveals the actual flow and waiting.",
+    "section": 1
+  },
+  {
+    "domain": "Logistics & Supply Chain",
+    "case": "Delivery Visibility & Fulfilment Costs",
+    "file": "06-logistics-supply-chain/README.md",
+    "id": "LS08",
+    "question": "Where does elapsed time accumulate before carrier collection?",
+    "ask": "Warehouse / Dispatch",
+    "purpose": "Separates internal delay from transport delay.",
+    "section": 1
+  },
+  {
+    "domain": "Logistics & Supply Chain",
+    "case": "Delivery Visibility & Fulfilment Costs",
+    "file": "06-logistics-supply-chain/README.md",
+    "id": "LS09",
+    "question": "Which handoff has the greatest mismatch between planned and actual time?",
+    "ask": "Operations / Analytics",
+    "purpose": "Locates the transition to investigate.",
+    "section": 1
+  },
+  {
+    "domain": "Logistics & Supply Chain",
+    "case": "Delivery Visibility & Fulfilment Costs",
+    "file": "06-logistics-supply-chain/README.md",
+    "id": "LS10",
+    "question": "How is the reason for a missed delivery attempt recorded?",
+    "ask": "Carrier / Support",
+    "purpose": "Checks whether exception data is usable.",
+    "section": 1
+  },
+  {
+    "domain": "Logistics & Supply Chain",
+    "case": "Delivery Visibility & Fulfilment Costs",
+    "file": "06-logistics-supply-chain/README.md",
+    "id": "LS11",
+    "question": "Which recent routing, staffing, packaging, or partner changes preceded the pattern?",
+    "ask": "Operations / Procurement",
+    "purpose": "Identifies candidate causes without asserting them.",
+    "section": 1
+  },
+  {
+    "domain": "Logistics & Supply Chain",
+    "case": "Delivery Visibility & Fulfilment Costs",
+    "file": "06-logistics-supply-chain/README.md",
+    "id": "LS12",
+    "question": "How are split shipments and repeat attempts counted in delivery reports?",
+    "ask": "Analytics / Finance",
+    "purpose": "Prevents distorted shipment and cost denominators.",
+    "section": 1
+  },
+  {
+    "domain": "Logistics & Supply Chain",
+    "case": "Delivery Visibility & Fulfilment Costs",
+    "file": "06-logistics-supply-chain/README.md",
+    "id": "LS13",
+    "question": "Which event makes a delivery promise binding for an order?",
+    "ask": "Commercial / Process owner",
+    "purpose": "Defines the promise boundary.",
+    "section": 2
+  },
+  {
+    "domain": "Logistics & Supply Chain",
+    "case": "Delivery Visibility & Fulfilment Costs",
+    "file": "06-logistics-supply-chain/README.md",
+    "id": "LS14",
+    "question": "What conditions allow the delivery estimate to be revised?",
+    "ask": "Logistics / Policy owner",
+    "purpose": "Clarifies controlled promise changes.",
+    "section": 2
+  },
+  {
+    "domain": "Logistics & Supply Chain",
+    "case": "Delivery Visibility & Fulfilment Costs",
+    "file": "06-logistics-supply-chain/README.md",
+    "id": "LS15",
+    "question": "How are partial shipments communicated and completed?",
+    "ask": "Operations / Support",
+    "purpose": "Defines a multi-parcel exception journey.",
+    "section": 2
+  },
+  {
+    "domain": "Logistics & Supply Chain",
+    "case": "Delivery Visibility & Fulfilment Costs",
+    "file": "06-logistics-supply-chain/README.md",
+    "id": "LS16",
+    "question": "What happens when an address is incomplete or changes after dispatch?",
+    "ask": "Carrier / Support",
+    "purpose": "Exposes address-correction rules.",
+    "section": 2
+  },
+  {
+    "domain": "Logistics & Supply Chain",
+    "case": "Delivery Visibility & Fulfilment Costs",
+    "file": "06-logistics-supply-chain/README.md",
+    "id": "LS17",
+    "question": "Who decides the next step after an unsuccessful delivery attempt?",
+    "ask": "Logistics / Carrier owner",
+    "purpose": "Establishes recovery authority.",
+    "section": 2
+  },
+  {
+    "domain": "Logistics & Supply Chain",
+    "case": "Delivery Visibility & Fulfilment Costs",
+    "file": "06-logistics-supply-chain/README.md",
+    "id": "LS18",
+    "question": "What rules determine whether a parcel is resent, returned, or investigated?",
+    "ask": "Operations / Policy owner",
+    "purpose": "Clarifies exceptional terminal paths.",
+    "section": 2
+  },
+  {
+    "domain": "Logistics & Supply Chain",
+    "case": "Delivery Visibility & Fulfilment Costs",
+    "file": "06-logistics-supply-chain/README.md",
+    "id": "LS19",
+    "question": "Which shipment information helps customers decide what to do next?",
+    "ask": "Customers / Product owner",
+    "purpose": "Links visibility to customer action.",
+    "section": 3
+  },
+  {
+    "domain": "Logistics & Supply Chain",
+    "case": "Delivery Visibility & Fulfilment Costs",
+    "file": "06-logistics-supply-chain/README.md",
+    "id": "LS20",
+    "question": "Which current tracking descriptions are misunderstood?",
+    "ask": "Customers / Support",
+    "purpose": "Finds language that creates unnecessary enquiries.",
+    "section": 3
+  },
+  {
+    "domain": "Logistics & Supply Chain",
+    "case": "Delivery Visibility & Fulfilment Costs",
+    "file": "06-logistics-supply-chain/README.md",
+    "id": "LS21",
+    "question": "How should the customer be informed when no recent physical scan is available?",
+    "ask": "Support / Product owner",
+    "purpose": "Avoids invented certainty about progress.",
+    "section": 3
+  },
+  {
+    "domain": "Logistics & Supply Chain",
+    "case": "Delivery Visibility & Fulfilment Costs",
+    "file": "06-logistics-supply-chain/README.md",
+    "id": "LS22",
+    "question": "What self-service changes can a customer request without disrupting fulfilment?",
+    "ask": "Customers / Logistics owner",
+    "purpose": "Explores useful action within operational limits.",
+    "section": 3
+  },
+  {
+    "domain": "Logistics & Supply Chain",
+    "case": "Delivery Visibility & Fulfilment Costs",
+    "file": "06-logistics-supply-chain/README.md",
+    "id": "LS23",
+    "question": "Which delivery exception should trigger proactive communication?",
+    "ask": "Support / Logistics",
+    "purpose": "Defines meaningful notification needs.",
+    "section": 3
+  },
+  {
+    "domain": "Logistics & Supply Chain",
+    "case": "Delivery Visibility & Fulfilment Costs",
+    "file": "06-logistics-supply-chain/README.md",
+    "id": "LS24",
+    "question": "Who owns an enquiry when the carrier and warehouse give different statuses?",
+    "ask": "Support / Logistics owner",
+    "purpose": "Establishes a cross-party resolution route.",
+    "section": 3
+  },
+  {
+    "domain": "Logistics & Supply Chain",
+    "case": "Delivery Visibility & Fulfilment Costs",
+    "file": "06-logistics-supply-chain/README.md",
+    "id": "LS25",
+    "question": "Which source is authoritative for each shipment milestone?",
+    "ask": "Integration / Operations owners",
+    "purpose": "Clarifies evidence behind the status.",
+    "section": 4
+  },
+  {
+    "domain": "Logistics & Supply Chain",
+    "case": "Delivery Visibility & Fulfilment Costs",
+    "file": "06-logistics-supply-chain/README.md",
+    "id": "LS26",
+    "question": "How are carrier events matched to the correct parcel and order?",
+    "ask": "Integration owner",
+    "purpose": "Tests identifier integrity across systems.",
+    "section": 4
+  },
+  {
+    "domain": "Logistics & Supply Chain",
+    "case": "Delivery Visibility & Fulfilment Costs",
+    "file": "06-logistics-supply-chain/README.md",
+    "id": "LS27",
+    "question": "What happens when tracking events arrive late or out of order?",
+    "ask": "Integration / Operations",
+    "purpose": "Defines timeline reconciliation.",
+    "section": 4
+  },
+  {
+    "domain": "Logistics & Supply Chain",
+    "case": "Delivery Visibility & Fulfilment Costs",
+    "file": "06-logistics-supply-chain/README.md",
+    "id": "LS28",
+    "question": "What happens when a carrier event is duplicated?",
+    "ask": "Integration owner",
+    "purpose": "Prevents duplicate state changes and messages.",
+    "section": 4
+  },
+  {
+    "domain": "Logistics & Supply Chain",
+    "case": "Delivery Visibility & Fulfilment Costs",
+    "file": "06-logistics-supply-chain/README.md",
+    "id": "LS29",
+    "question": "How is a physical handoff recorded when scanning is unavailable?",
+    "ask": "Warehouse / Carrier",
+    "purpose": "Explores continuity of reliable evidence.",
+    "section": 4
+  },
+  {
+    "domain": "Logistics & Supply Chain",
+    "case": "Delivery Visibility & Fulfilment Costs",
+    "file": "06-logistics-supply-chain/README.md",
+    "id": "LS30",
+    "question": "Which cost records link to each shipment, return, and delivery attempt?",
+    "ask": "Finance / Data owner",
+    "purpose": "Supports economic analysis at the correct grain.",
+    "section": 4
+  },
+  {
+    "domain": "Logistics & Supply Chain",
+    "case": "Delivery Visibility & Fulfilment Costs",
+    "file": "06-logistics-supply-chain/README.md",
+    "id": "LS31",
+    "question": "What throughput must picking, packing, and dispatch each sustain?",
+    "ask": "Warehouse / Operations",
+    "purpose": "Identifies capacity requirements by stage.",
+    "section": 5
+  },
+  {
+    "domain": "Logistics & Supply Chain",
+    "case": "Delivery Visibility & Fulfilment Costs",
+    "file": "06-logistics-supply-chain/README.md",
+    "id": "LS32",
+    "question": "Which packaging or handling errors generate rework or damage costs?",
+    "ask": "Warehouse / Quality owner",
+    "purpose": "Connects quality to fulfilment economics.",
+    "section": 5
+  },
+  {
+    "domain": "Logistics & Supply Chain",
+    "case": "Delivery Visibility & Fulfilment Costs",
+    "file": "06-logistics-supply-chain/README.md",
+    "id": "LS33",
+    "question": "What service must continue when the carrier integration is unavailable?",
+    "ask": "Operations / IT",
+    "purpose": "Defines degraded-mode expectations.",
+    "section": 5
+  },
+  {
+    "domain": "Logistics & Supply Chain",
+    "case": "Delivery Visibility & Fulfilment Costs",
+    "file": "06-logistics-supply-chain/README.md",
+    "id": "LS34",
+    "question": "Who may view customer location details or change shipment instructions?",
+    "ask": "Security / Logistics owner",
+    "purpose": "Clarifies sensitive access and action authority.",
+    "section": 5
+  },
+  {
+    "domain": "Logistics & Supply Chain",
+    "case": "Delivery Visibility & Fulfilment Costs",
+    "file": "06-logistics-supply-chain/README.md",
+    "id": "LS35",
+    "question": "Which partner, contractual, and applicable policy requirements constrain shipment handling?",
+    "ask": "Procurement / Policy owners",
+    "purpose": "Requests authoritative constraints without inventing rules.",
+    "section": 5
+  },
+  {
+    "domain": "Logistics & Supply Chain",
+    "case": "Delivery Visibility & Fulfilment Costs",
+    "file": "06-logistics-supply-chain/README.md",
+    "id": "LS36",
+    "question": "What evidence must remain available to resolve a loss or delivery dispute?",
+    "ask": "Claims / Records owner",
+    "purpose": "Defines traceability and retention needs.",
+    "section": 5
+  },
+  {
+    "domain": "Logistics & Supply Chain",
+    "case": "Delivery Visibility & Fulfilment Costs",
+    "file": "06-logistics-supply-chain/README.md",
+    "id": "LS37",
+    "question": "Which failure should be contained before adding a new customer dashboard?",
+    "ask": "Logistics / Support owner",
+    "purpose": "Challenges solution-first prioritisation.",
+    "section": 6
+  },
+  {
+    "domain": "Logistics & Supply Chain",
+    "case": "Delivery Visibility & Fulfilment Costs",
+    "file": "06-logistics-supply-chain/README.md",
+    "id": "LS38",
+    "question": "Which route, warehouse, or partner is suitable for a controlled pilot?",
+    "ask": "Operations / Carrier owner",
+    "purpose": "Defines a feasible learning boundary.",
+    "section": 6
+  },
+  {
+    "domain": "Logistics & Supply Chain",
+    "case": "Delivery Visibility & Fulfilment Costs",
+    "file": "06-logistics-supply-chain/README.md",
+    "id": "LS39",
+    "question": "What value would justify replacing a carrier rather than improving the handoff?",
+    "ask": "Procurement / Logistics",
+    "purpose": "Compares a major option with process improvement.",
+    "section": 6
+  },
+  {
+    "domain": "Logistics & Supply Chain",
+    "case": "Delivery Visibility & Fulfilment Costs",
+    "file": "06-logistics-supply-chain/README.md",
+    "id": "LS40",
+    "question": "Who can approve a change to delivery promises or partner arrangements?",
+    "ask": "Commercial / Logistics owner",
+    "purpose": "Identifies accountable authority.",
+    "section": 6
+  },
+  {
+    "domain": "Logistics & Supply Chain",
+    "case": "Delivery Visibility & Fulfilment Costs",
+    "file": "06-logistics-supply-chain/README.md",
+    "id": "LS41",
+    "question": "Which operating cost increase is acceptable to meet the required service outcome?",
+    "ask": "Finance / Logistics sponsor",
+    "purpose": "Makes the cost-versus-reliability trade-off explicit.",
+    "section": 6
+  },
+  {
+    "domain": "Logistics & Supply Chain",
+    "case": "Delivery Visibility & Fulfilment Costs",
+    "file": "06-logistics-supply-chain/README.md",
+    "id": "LS42",
+    "question": "What dependency could prevent the pilot from producing reliable tracking information?",
+    "ask": "Integration / Partner owner",
+    "purpose": "Surfaces feasibility risks before commitment.",
+    "section": 6
+  },
+  {
+    "domain": "Logistics & Supply Chain",
+    "case": "Delivery Visibility & Fulfilment Costs",
+    "file": "06-logistics-supply-chain/README.md",
+    "id": "LS43",
+    "question": "Which late, duplicated, and missing-event scenarios must be tested?",
+    "ask": "QA / Integration owner",
+    "purpose": "Defines tracking-integrity coverage.",
+    "section": 7
+  },
+  {
+    "domain": "Logistics & Supply Chain",
+    "case": "Delivery Visibility & Fulfilment Costs",
+    "file": "06-logistics-supply-chain/README.md",
+    "id": "LS44",
+    "question": "Who will validate that customer messages reflect the actual shipment evidence?",
+    "ask": "Support / Customer representatives",
+    "purpose": "Checks honest and usable communication.",
+    "section": 7
+  },
+  {
+    "domain": "Logistics & Supply Chain",
+    "case": "Delivery Visibility & Fulfilment Costs",
+    "file": "06-logistics-supply-chain/README.md",
+    "id": "LS45",
+    "question": "How will we verify that a status change matches a real operational milestone?",
+    "ask": "QA / Warehouse / Carrier",
+    "purpose": "Connects display behaviour to physical evidence.",
+    "section": 7
+  },
+  {
+    "domain": "Logistics & Supply Chain",
+    "case": "Delivery Visibility & Fulfilment Costs",
+    "file": "06-logistics-supply-chain/README.md",
+    "id": "LS46",
+    "question": "How will pilot delivery performance be compared across equivalent shipment mixes?",
+    "ask": "Analytics / Logistics",
+    "purpose": "Avoids misleading aggregate improvement.",
+    "section": 7
+  },
+  {
+    "domain": "Logistics & Supply Chain",
+    "case": "Delivery Visibility & Fulfilment Costs",
+    "file": "06-logistics-supply-chain/README.md",
+    "id": "LS47",
+    "question": "Which damage, failed-attempt, and cost measures must not worsen?",
+    "ask": "Quality / Finance / Logistics",
+    "purpose": "Defines service-economic guardrails.",
+    "section": 7
+  },
+  {
+    "domain": "Logistics & Supply Chain",
+    "case": "Delivery Visibility & Fulfilment Costs",
+    "file": "06-logistics-supply-chain/README.md",
+    "id": "LS48",
+    "question": "Who owns monitoring and resolving stale tracking after rollout?",
+    "ask": "Logistics / Support owner",
+    "purpose": "Keeps ongoing accountability.",
+    "section": 7
+  }
+]
